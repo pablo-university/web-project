@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001 | local-ssl-proxy --source 3000 --target 3001",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "daisyui": "^2.31.0",
+=======
+    "@notionhq/client": "^2.1.1",
+>>>>>>> de6f4c13892c9502f2982a887c66b37d47bbccb7
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"
