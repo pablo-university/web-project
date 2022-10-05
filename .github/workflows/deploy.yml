@@ -18,15 +18,18 @@ jobs:
           npm ci
           npm run build
 
-      # - name: Deploy 🚀
-      #   uses: JamesIves/github-pages-deploy-action@v4
-      #   with:
-      #     folder: out # The folder the action should deploy.
+    
+    
       # new
-      - name: Add .nojekyll file
-        run: touch ./out/.nojekyll
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.1
-        with:
-          branch: gh-pages
-          folder: out
+      # - name: Add .nojekyll file
+      #   run: touch ./out/.nojekyll
+      # - name: Deploy
+      #   uses: JamesIves/github-pages-deploy-action@4.1.1
+      #   with:
+      #     branch: gh-pages
+      #     folder: out
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./out
