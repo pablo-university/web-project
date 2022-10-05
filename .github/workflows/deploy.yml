@@ -28,12 +28,4 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
-          branch: gh-pages
           folder: out
-      # new 2
-      # - name: GitHub Pages
-      #   uses: crazy-max/ghaction-github-pages@v3.0.0
-      #   with:
-      #     build_dir: out
-      #     # Whether to treat build_dir as an absolute path
-
