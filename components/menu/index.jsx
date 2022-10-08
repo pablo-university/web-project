@@ -4,7 +4,7 @@ import Trigger from "components/drawer/Trigger";
 
 export default function index() {
   return (
-    <div className="navbar bg-base-100 [ shadow rounded ]">
+    <div className="navbar bg-base-100 [ shadow rounded-lg px-6 ]">
       <div className="flex-1">
         <Link href="/">
           <a>
@@ -25,7 +25,7 @@ export default function index() {
             </Link>
           </li>
           <li>
-            <Link href="/aaa">
+            <Link href="/blog">
               <a>Blog</a>
             </Link>
           </li>
