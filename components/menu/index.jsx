@@ -7,7 +7,7 @@ export default function index() {
         <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal p-0 hidden lg:flex">
+        <ul className="menu menu-horizontal p-0 [ hidden lg:flex ]">
           <li>
             <a>Puntos de donación</a>
           </li>
@@ -38,7 +38,7 @@ export default function index() {
           </li>
           <button className="btn btn-primary">DONAR</button>
         </ul>
-        <ul className="menu menu-horizontal p-0 blok lg:hidden">
+        <ul className="menu menu-horizontal p-0 [ blok lg:hidden ]">
           <Trigger>Burguer!</Trigger>
         </ul>
       </div>
