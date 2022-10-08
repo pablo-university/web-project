@@ -1,8 +1,9 @@
 import LayoutWithDrawer from "components/layouts/LayoutWithDrawer";
+import Container from "components/layouts/Container";
 export default function Donar() {
-    return (
-        <LayoutWithDrawer>
-            <button className="btn">donar</button>
-        </LayoutWithDrawer>
-    );
+  return (
+    <LayoutWithDrawer>
+      <Container>donar</Container>
+    </LayoutWithDrawer>
+  );
 }

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from 'next/image'
+import Image from "next/image";
 import Trigger from "components/drawer/Trigger";
 
 export default function index() {
@@ -44,7 +44,9 @@ export default function index() {
             </a>
             <ul className="p-2 bg-base-100">
               <li>
-                <a>Submenu 1</a>
+                <Link href="/hoursAndConditions">
+                  <a>Horarios y condiciones</a>
+                </Link>
               </li>
               <li>
                 <a>Submenu 2</a>

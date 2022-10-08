@@ -1,10 +1,10 @@
 import LayoutWithDrawer from "components/layouts/LayoutWithDrawer";
 import Container from "components/layouts/Container";
 
-export default function Donar() {
+export default function donationPoints() {
   return (
     <LayoutWithDrawer>
-      <Container>blog</Container>
+      <Container>horarios y condiciones</Container>
     </LayoutWithDrawer>
   );
 }
