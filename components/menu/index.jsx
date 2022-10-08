@@ -1,18 +1,33 @@
+import Link from "next/link";
+import Image from 'next/image'
 import Trigger from "components/drawer/Trigger";
 
 export default function index() {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 [ shadow rounded-lg px-6 ]">
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <Link href="/">
+          <a>
+            <Image
+              src="/logo.svg"
+              alt="logo hemocentro maldonado"
+              width={200}
+              height={50}
+            />
+          </a>
+        </Link>
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal p-0 [ hidden lg:flex ]">
           <li>
-            <a>Puntos de donación</a>
+            <Link href="/donationPoints">
+              <a>Puntos de donación</a>
+            </Link>
           </li>
           <li>
-            <a>Blog</a>
+            <Link href="/blog">
+              <a>Blog</a>
+            </Link>
           </li>
           <li tabIndex={0}>
             <a>
@@ -36,7 +51,11 @@ export default function index() {
               </li>
             </ul>
           </li>
-          <button className="btn btn-primary">DONAR</button>
+          <Link href="/donate">
+            <a>
+              <button className="btn btn-primary">DONAR</button>
+            </a>
+          </Link>
         </ul>
         <ul className="menu menu-horizontal p-0 [ blok lg:hidden ]">
           <Trigger>Burguer!</Trigger>
