@@ -1,3 +1,5 @@
+import Trigger from "components/drawer/Trigger";
+
 export default function index() {
   return (
     <div className="navbar bg-base-100">
@@ -5,7 +7,7 @@ export default function index() {
         <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal p-0">
+        <ul className="menu menu-horizontal p-0 hidden lg:flex">
           <li>
             <a>Puntos de donación</a>
           </li>
@@ -35,6 +37,9 @@ export default function index() {
             </ul>
           </li>
           <button className="btn btn-primary">DONAR</button>
+        </ul>
+        <ul className="menu menu-horizontal p-0 blok lg:hidden">
+          <Trigger>Burguer!</Trigger>
         </ul>
       </div>
     </div>
