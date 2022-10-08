@@ -1,10 +1,13 @@
 import Menu from "components/menu";
+import Container from "components/layouts/Container";
 
 export default function Layout({ children }) {
   return (
     <>
       <header>
-        <Menu />
+        <Container>
+          <Menu />
+        </Container>
       </header>
       <main>{children}</main>
       <footer className="footer p-10 bg-base-200 text-base-content justify-between">
