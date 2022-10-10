@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 import Trigger from "components/drawer/Trigger";
 
 export default function index() {
@@ -8,7 +8,7 @@ export default function index() {
       <div className="flex-1">
         <Link href="/">
           <a>
-            <Image
+            <img
               src="/logo.svg"
               alt="logo hemocentro maldonado"
               width={200}
