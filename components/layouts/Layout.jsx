@@ -5,12 +5,12 @@ export default function Layout({ children }) {
   return (
     <>
       <header>
-        <Container>
+        <Container className={"mt-5"}>
           <Menu />
         </Container>
       </header>
       <main>{children}</main>
-      <footer className="footer p-10 bg-base-200 text-base-content justify-between">
+      <footer className="footer p-10 bg-base-200 text-base-content justify-between [ bg-neutral text-white ]">
         <div>
           <span className="footer-title">Services</span>
           <a className="link link-hover">Branding</a>
@@ -32,7 +32,7 @@ export default function Layout({ children }) {
           <a className="link link-hover">Cookie policy</a>
         </div>
       </footer>
-      <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+      <footer className="footer px-10 py-4 border-t border-base-300 [ bg-neutral text-white ]">
         <div className="items-center grid-flow-col">
           <svg
             width="24"

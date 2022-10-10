@@ -1,10 +1,11 @@
 import Link from "next/link";
 // import Image from "next/image";
 import Trigger from "components/drawer/Trigger";
+import PrimaryButton from "components/Buttons/PrimaryButton";
 
 export default function index() {
   return (
-    <div className="navbar bg-base-100 [ shadow rounded-lg px-6 ]">
+    <div className="navbar bg-base-100 [ shadow rounded-2xl px-8 ]">
       <div className="flex-1">
         <Link href="/">
           <a>
@@ -18,7 +19,7 @@ export default function index() {
         </Link>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal p-0 [ hidden lg:flex ]">
+        <ul className="menu menu-horizontal p-0 [ hidden lg:flex gap-1 ]">
           <li>
             <Link href="/donationPoints">
               <a>Puntos de donación</a>
@@ -55,7 +56,7 @@ export default function index() {
           </li>
           <Link href="/donate">
             <a>
-              <button className="btn btn-primary">DONAR</button>
+              <PrimaryButton>DONAR</PrimaryButton>
             </a>
           </Link>
         </ul>
