@@ -10,7 +10,7 @@ export default function Layout({ children }) {
         </Container>
       </header>
       <main>{children}</main>
-      <footer className="footer p-10 bg-base-200 text-base-content justify-between [ bg-neutral text-gray-100 ] text-orange-600	">
+      <footer className="footer p-10 bg-base-200 text-base-content justify-between [ bg-neutral text-white ]">
         <div>
           <span className="footer-title">Services</span>
           <a className="link link-hover">Branding</a>
