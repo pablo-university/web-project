@@ -1,7 +1,7 @@
+import { BASE_PATH } from "utils";
 /** @type {import('next').NextConfig} */
-console.log();
 const BASE_PATH =   process.env.NODE_ENV === 'development' ? {} : {
-  basePath: '/web-project',
+  basePath: BASE_PATH,
 }
 const nextConfig = {
   reactStrictMode: true,

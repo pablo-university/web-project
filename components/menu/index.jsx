@@ -1,3 +1,4 @@
+import { BASE_PATH } from "utils";
 import Link from "next/link";
 // import Image from "next/image";
 import Trigger from "components/drawer/Trigger";
@@ -10,7 +11,7 @@ export default function index() {
         <Link href="/">
           <a>
             <img
-              src="/logo.svg"
+              src={`${BASE_PATH}/logo.svg`}
               alt="logo hemocentro maldonado"
               width={200}
               height={50}
