@@ -2,7 +2,7 @@ import Menu from "components/menu";
 import Container from "components/layouts/Container";
 import Drawer from "components/drawer/index";
 
-export default function Layout({ children }) {
+export default function Layout({ children, main }) {
     return (
         <Drawer aside={<p>content drawer</p>}>
             <header className="fixed -inset-x-full top-5">
@@ -10,7 +10,9 @@ export default function Layout({ children }) {
                     <Menu />
                 </Container>
             </header>
-            <main>{children}</main>
+            {/* the margin is to prevent the menu hidden the content */}
+            {!main && <main className="md:mt-24 ">{children}</main>}
+            {main && main}
             <footer className="footer p-10 bg-base-200 text-base-content justify-between [ bg-neutral text-white ]">
                 <div>
                     <span className="footer-title">Services</span>
