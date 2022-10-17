@@ -1,10 +1,10 @@
-import LayoutWithDrawer from "components/layouts/LayoutWithDrawer";
+import Layout from "components/layouts/Layout";
 import Container from "components/layouts/Container";
 
 export default function donationPoints() {
-  return (
-    <LayoutWithDrawer>
-      <Container>horarios y condiciones</Container>
-    </LayoutWithDrawer>
-  );
+    return (
+        <Layout>
+            <Container>horarios y condiciones</Container>
+        </Layout>
+    );
 }

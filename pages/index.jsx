@@ -1,12 +1,12 @@
-import LayoutWithDrawer from "components/layouts/LayoutWithDrawer";
+import Layout from "components/layouts/Layout";
 import Container from "components/layouts/Container";
 
 export default function Home() {
-  return (
-    <LayoutWithDrawer>
-      <Container>
-        <p className=" bg-zinc-400 px-3">color</p>
-      </Container>
-    </LayoutWithDrawer>
-  );
+    return (
+        <Layout>
+            <Container>
+                <p className=" bg-zinc-400 px-3">color</p>
+            </Container>
+        </Layout>
+    );
 }
