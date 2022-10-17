@@ -2,7 +2,7 @@ import { BASE_PATH } from "utils";
 import Link from "next/link";
 // import Image from "next/image";
 import Trigger from "components/drawer/Trigger";
-import PrimaryButton from "components/Buttons/PrimaryButton";
+import PrimaryButton from "components/buttons/PrimaryButton";
 
 export default function index() {
     return (
