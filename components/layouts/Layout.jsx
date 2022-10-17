@@ -5,7 +5,7 @@ import Drawer from 'components/drawer/index'
 export default function Layout({ children, main }) {
   return (
     <Drawer aside={<p>content drawer</p>}>
-      <header className="md:fixed md:-inset-x-full md:top-5">
+      <header className="[ md:fixed md:-inset-x-full md:top-5 ]">
         <Container>
           <Menu />
         </Container>
