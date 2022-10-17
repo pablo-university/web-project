@@ -5,10 +5,11 @@ import Hero from "components/Hero";
 export default function Home() {
     return (
         <Layout>
+            <Hero backgroundImageUrl={"https://placeimg.com/1000/800/arch"}>
+                content
+            </Hero>
             <Container>
-                <Hero backgroundImageUrl={"https://placeimg.com/1000/800/arch"}>
-                    content
-                </Hero>
+                content inside container
             </Container>
         </Layout>
     );
