@@ -5,7 +5,6 @@ import coverMaria from 'img/cover-maria.jpg'
 import PrimaryButton from 'components/buttons/PrimaryButton'
 
 export default function Home() {
-  console.log(coverMaria)
   return (
     <Layout
       main={
@@ -17,8 +16,8 @@ export default function Home() {
           >
             <div className="flex flex-col w-full lg:flex-row [ w-full ]">
               <div className="grid flex-grow rounded-box place-items-center [ basis-full ]">
-                <h1 className="text-8xl">
-                  <span>Un donante</span>
+                <h1 className="text-5xl lg:text-8xl font-bold">
+                  <span className="text-primary block">Un donante</span>
                   cuatro vidas
                 </h1>
                 <p>
