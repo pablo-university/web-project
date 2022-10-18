@@ -1,6 +1,6 @@
 import { BASE_PATH } from 'utils'
 import Link from 'next/link'
-// import Image from "next/image";
+import logo from 'img/logo.svg'
 import Trigger from 'components/drawer/Trigger'
 import PrimaryButton from 'components/buttons/PrimaryButton'
 
@@ -11,7 +11,7 @@ export default function index() {
         <Link href="/">
           <a>
             <img
-              src={`${BASE_PATH}/logo.svg`}
+              src={logo.src}
               alt="logo hemocentro maldonado"
               width={200}
               height={50}

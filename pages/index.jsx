@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <Layout
       main={
-        <main>
+        <main className="row-[1/3] col-[1/2]">
           <Hero
             backgroundImageUrl={
               coverMaria.src || 'https://placeimg.com/1000/800/arch'
