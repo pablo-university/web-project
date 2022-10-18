@@ -3,6 +3,7 @@ import Container from 'components/layouts/Container'
 import Hero from 'components/Hero'
 import coverMaria from 'img/cover-maria.jpg'
 import PrimaryButton from 'components/buttons/PrimaryButton'
+import TestimonialCard from 'components/cards/TestimonialCard'
 
 export default function Home() {
   return (
@@ -34,7 +35,7 @@ export default function Home() {
               </div>
               {/* <div className="divider lg:divider-horizontal">OR</div> */}
               <div className="grid flex-grow rounded-box place-items-center [ basis-full ]">
-                content
+                <TestimonialCard>qwe</TestimonialCard>
               </div>
             </div>
           </Hero>

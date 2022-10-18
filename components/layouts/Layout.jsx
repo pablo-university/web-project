@@ -4,7 +4,14 @@ import Drawer from 'components/drawer/index'
 
 export default function Layout({ children, main }) {
   return (
-    <Drawer aside={<p>content drawer</p>}>
+    <Drawer
+      aside={
+        <p>
+          content drawer, renderizar los items del menu, crear otro componente
+          menu
+        </p>
+      }
+    >
       <div className="grid">
         <header className="row-[1/2] col-[1/2] z-10 mt-8">
           <Container>
