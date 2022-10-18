@@ -11,8 +11,7 @@ export default function Layout({ children, main }) {
             <Menu />
           </Container>
         </header>
-        {/* the margin is to prevent the menu hidden the content */}
-        {!main && <main className="md:mt-24">{children}</main>}
+        {!main && <main>{children}</main>}
         {main && main}
         <footer className="footer p-10 bg-base-200 text-base-content justify-between [ bg-neutral text-white ]">
           <div>
