@@ -4,6 +4,7 @@ import Hero from 'components/Hero'
 import coverMaria from 'img/cover-maria.jpg'
 import PrimaryButton from 'components/buttons/PrimaryButton'
 import TestimonialCard from 'components/cards/TestimonialCard'
+import RoundedSmall from 'components/buttons/RoundedSmall'
 
 export default function Home() {
   return (
@@ -35,7 +36,8 @@ export default function Home() {
               </div>
               {/* <div className="divider lg:divider-horizontal">OR</div> */}
               <div className="grid flex-grow rounded-box place-items-center [ basis-full ]">
-                <TestimonialCard>qwe</TestimonialCard>
+                <TestimonialCard>contenido</TestimonialCard>
+                <RoundedSmall></RoundedSmall>
               </div>
             </div>
           </Hero>
