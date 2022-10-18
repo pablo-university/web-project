@@ -12,7 +12,7 @@ export default function Layout({ children, main }) {
         </p>
       }
     >
-      <div className="grid">
+      <div className="layout grid">
         <header className="row-[1/2] col-[1/2] z-10 mt-8">
           <Container>
             <Menu />
