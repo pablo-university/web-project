@@ -15,8 +15,8 @@ export default function Home() {
               coverMaria.src || 'https://placeimg.com/1000/800/arch'
             }
           >
-            <div className="flex flex-col w-full lg:flex-row [ w-full ]">
-              <div className="grid flex-grow rounded-box place-items-center [ basis-full ]">
+            <div className="flex flex-col w-full lg:flex-row [ container gap-8 ]">
+              <div className="grid flex-grow rounded-box place-items-start [ basis-full ]">
                 <h1 className="text-5xl lg:text-8xl font-bold">
                   <span className="text-primary block">Un donante</span>
                   cuatro vidas
