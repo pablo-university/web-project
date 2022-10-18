@@ -5,15 +5,19 @@ import coverMaria from 'img/cover-maria.jpg'
 import PrimaryButton from 'components/buttons/PrimaryButton'
 import TestimonialCard from 'components/cards/TestimonialCard'
 import RoundedSmall from 'components/buttons/RoundedSmall'
+import { configs } from 'db'
+import { useState } from 'react'
 
 export default function Home() {
+  const [heroImage, setHeroImage] = useState(configs.heroImages[0])
+  console.log(heroImage)
   return (
     <Layout
       main={
         <main className="row-[1/3] col-[1/2]">
           <Hero
             backgroundImageUrl={
-              coverMaria.src || 'https://placeimg.com/1000/800/arch'
+              heroImage.src || 'https://placeimg.com/1000/800/arch'
             }
           >
             <div className="flex flex-col w-full lg:flex-row [ container gap-8 mt-24 ]">
