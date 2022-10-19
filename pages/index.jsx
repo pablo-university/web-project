@@ -68,7 +68,7 @@ export default function Home() {
               </div>
             </div>
           </Hero>
-          <Container>
+          <Container className="my-8">
             <div className="grid md:grid-cols-2 gap-4 md:gap-16">
               <div className="grid justify-items-start gap-4">
                 <h2 className="text-4xl">Hemocentro</h2>
