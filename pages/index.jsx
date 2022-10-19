@@ -42,11 +42,10 @@ export default function Home() {
                 </p>
                 <PrimaryButton>QUIERO DONAR</PrimaryButton>
               </div>
-              {/* <div className="divider lg:divider-horizontal">OR</div> */}
               <div className="grid flex-grow rounded-box place-items-center [ basis-full ]">
                 <TestimonialCard
                   title={testimonial.name}
-                  urlImage={testimonial.image.src}
+                  imageUrl={testimonial.image.src}
                 >
                   {testimonial.description}
                 </TestimonialCard>
