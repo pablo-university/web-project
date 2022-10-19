@@ -9,11 +9,12 @@ import { configs } from 'db'
 import { useState } from 'react'
 
 export default function Home() {
-  const [testimonials, setTestimonials] = useState(configs.testimonials)
+  const [testimonials] = useState(configs.testimonials)
   const [testimonial, setTestimonial] = useState(configs.testimonials[0])
   const handleChangeHeroImage = (targetTestimonialId) => {
     setTestimonial(testimonials[targetTestimonialId])
   }
+  console.log(testimonial)
   return (
     <Layout
       main={
@@ -43,7 +44,12 @@ export default function Home() {
               </div>
               {/* <div className="divider lg:divider-horizontal">OR</div> */}
               <div className="grid flex-grow rounded-box place-items-center [ basis-full ]">
-                <TestimonialCard>contenido</TestimonialCard>
+                <TestimonialCard
+                  title={testimonial.name}
+                  urlImage={testimonial.image.src}
+                >
+                  {testimonial.description}
+                </TestimonialCard>
                 <div className="grid grid-flow-col">
                   {testimonials.map((testimonial, index) => (
                     <RoundedSmall
