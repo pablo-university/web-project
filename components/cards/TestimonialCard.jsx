@@ -1,5 +1,3 @@
-import PrimaryButton from 'components/buttons/PrimaryButton'
-
 export default function TestimonialCard({ title, children, imageUrl }) {
   return (
     <div className="card w-96 glass">

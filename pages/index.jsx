@@ -11,8 +11,11 @@ import { useState } from 'react'
 export default function Home() {
   const [testimonials] = useState(configs.testimonials)
   const [testimonial, setTestimonial] = useState(configs.testimonials[0])
+  const [actualIndex, setActualIndex] = useState(0)
+
   const handleChangeHeroImage = (targetTestimonialId) => {
     setTestimonial(testimonials[targetTestimonialId])
+    setActualIndex(targetTestimonialId)
   }
   console.log(testimonial)
   return (
@@ -42,18 +45,19 @@ export default function Home() {
                 </p>
                 <PrimaryButton>QUIERO DONAR</PrimaryButton>
               </div>
-              <div className="grid flex-grow rounded-box place-items-center [ basis-full ]">
+              <div className="grid flex-grow rounded-box place-items-center [ basis-full gap-4 ]">
                 <TestimonialCard
                   title={testimonial.name}
                   imageUrl={testimonial.image.src}
                 >
                   {testimonial.description}
                 </TestimonialCard>
-                <div className="grid grid-flow-col">
+                <div className="grid grid-flow-col gap-2">
                   {testimonials.map((testimonial, index) => (
                     <RoundedSmall
                       key={index}
                       onClick={() => handleChangeHeroImage(index)}
+                      className={actualIndex == index ? 'bg-primary' : ''}
                     ></RoundedSmall>
                   ))}
                 </div>
