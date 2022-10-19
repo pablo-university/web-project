@@ -8,5 +8,8 @@ export const articles = [
   },
 ]
 export const configs = {
-  heroImages: [coverMaria, coverFranco],
+  testimonials: [
+    { name: 'maria', image: coverMaria },
+    { name: 'franco', image: coverFranco },
+  ],
 }

@@ -9,15 +9,18 @@ import { configs } from 'db'
 import { useState } from 'react'
 
 export default function Home() {
-  const [heroImage, setHeroImage] = useState(configs.heroImages[0])
-  console.log(heroImage)
+  const [testimonials, setTestimonials] = useState(configs.testimonials)
+  const [testimonial, setTestimonial] = useState(configs.testimonials[0])
+  const handleChangeHeroImage = (targetTestimonialId) => {
+    setTestimonial(testimonials[targetTestimonialId])
+  }
   return (
     <Layout
       main={
         <main className="row-[1/3] col-[1/2]">
           <Hero
             backgroundImageUrl={
-              heroImage.src || 'https://placeimg.com/1000/800/arch'
+              testimonial.image.src || 'https://placeimg.com/1000/800/arch'
             }
           >
             <div className="flex flex-col w-full lg:flex-row [ container gap-8 mt-24 ]">
@@ -41,7 +44,14 @@ export default function Home() {
               {/* <div className="divider lg:divider-horizontal">OR</div> */}
               <div className="grid flex-grow rounded-box place-items-center [ basis-full ]">
                 <TestimonialCard>contenido</TestimonialCard>
-                <RoundedSmall></RoundedSmall>
+                <div className="grid grid-flow-col">
+                  {testimonials.map((testimonial, index) => (
+                    <RoundedSmall
+                      key={index}
+                      onClick={() => handleChangeHeroImage(index)}
+                    ></RoundedSmall>
+                  ))}
+                </div>
               </div>
             </div>
           </Hero>
