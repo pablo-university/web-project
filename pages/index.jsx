@@ -17,7 +17,6 @@ export default function Home() {
   const handleChangeHeroImage = (targetTestimonialId) => {
     setActualIndex(targetTestimonialId)
   }
-  console.log(actualIndex)
   return (
     <Layout
       main={
