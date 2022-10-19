@@ -5,7 +5,7 @@ export default function TestimonialCard({
   imageUrl,
 }) {
   return (
-    <div className={`card w-96 glass ${className}`}>
+    <div className={`card w-80 glass ${className}`}>
       <figure>
         <img src={imageUrl} alt={title} />
       </figure>
