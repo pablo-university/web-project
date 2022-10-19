@@ -1,6 +1,11 @@
-export default function TestimonialCard({ title, children, imageUrl }) {
+export default function TestimonialCard({
+  title,
+  className = '',
+  children,
+  imageUrl,
+}) {
   return (
-    <div className="card w-96 glass">
+    <div className={`card w-96 glass ${className}`}>
       <figure>
         <img src={imageUrl} alt={title} />
       </figure>

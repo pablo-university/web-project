@@ -10,21 +10,20 @@ import { useState } from 'react'
 
 export default function Home() {
   const [testimonials] = useState(configs.testimonials)
-  const [testimonial, setTestimonial] = useState(configs.testimonials[0])
   const [actualIndex, setActualIndex] = useState(0)
 
   const handleChangeHeroImage = (targetTestimonialId) => {
-    setTestimonial(testimonials[targetTestimonialId])
     setActualIndex(targetTestimonialId)
   }
-  console.log(testimonial)
+  console.log(actualIndex)
   return (
     <Layout
       main={
         <main className="row-[1/3] col-[1/2]">
           <Hero
             backgroundImageUrl={
-              testimonial.image.src || 'https://placeimg.com/1000/800/arch'
+              testimonials[actualIndex].image.src ||
+              'https://placeimg.com/1000/800/arch'
             }
           >
             <div className="flex flex-col w-full lg:flex-row [ container gap-8 mt-24 ]">
@@ -46,12 +45,15 @@ export default function Home() {
                 <PrimaryButton>QUIERO DONAR</PrimaryButton>
               </div>
               <div className="grid flex-grow rounded-box place-items-center [ basis-full gap-4 ]">
-                <TestimonialCard
-                  title={testimonial.name}
-                  imageUrl={testimonial.image.src}
-                >
-                  {testimonial.description}
-                </TestimonialCard>
+                {testimonials.map((testimonial, index) => (
+                  <TestimonialCard
+                    title={testimonial.name}
+                    imageUrl={testimonial.image.src}
+                    className={actualIndex == index ? '' : 'hidden'}
+                  >
+                    {testimonial.description}
+                  </TestimonialCard>
+                ))}
                 <div className="grid grid-flow-col gap-2">
                   {testimonials.map((testimonial, index) => (
                     <RoundedSmall
