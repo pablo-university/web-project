@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useState } from 'react'
 import Layout from 'components/layouts/Layout'
 import Container from 'components/layouts/Container'
@@ -8,7 +9,6 @@ import RoundedSmall from 'components/buttons/RoundedSmall'
 import PrimaryOutlineButton from 'components/buttons/PrimaryOutlineButton'
 import { configs } from 'db'
 import hemocentroImage from 'img/home/hemocentro.jpg'
-import hemobusImage from 'img/home/hemobus.jpg'
 
 export default function Home() {
   const [testimonials] = useState(configs.testimonials)
@@ -43,7 +43,9 @@ export default function Home() {
                   educando y promoviendo la donación voluntaria, altruista y
                   repetitiva.
                 </p>
-                <PrimaryButton>QUIERO DONAR</PrimaryButton>
+                <Link href="/donate">
+                  <PrimaryButton>QUIERO DONAR</PrimaryButton>
+                </Link>
               </div>
               <div className="grid flex-grow rounded-box place-items-center [ basis-full gap-4 ]">
                 {testimonials.map((testimonial, index) => (
