@@ -13,8 +13,8 @@ export default function Layout({ children, main }) {
       }
     >
       <div className="layout grid">
-        <header className="row-[1/2] col-[1/2] z-10 mt-8">
-          <Container>
+        <header className="row-[1/2] col-[1/2] z-10 md:mt-8">
+          <Container className="p-0">
             <Menu />
           </Container>
         </header>

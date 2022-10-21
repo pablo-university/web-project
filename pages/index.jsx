@@ -28,9 +28,9 @@ export default function Home() {
               'https://placeimg.com/1000/800/arch'
             }
           >
-            <div className="flex flex-col w-full lg:flex-row [ container gap-8 mt-24 ]">
+            <div className="flex flex-col w-full md:flex-row [ container gap-8 mt-24 ]">
               <div className="grid flex-grow rounded-box place-items-start [ basis-full text-start gap-4 ]">
-                <h1 className="text-5xl lg:text-8xl font-bold">
+                <h1 className="text-5xl md:text-8xl font-bold">
                   <span className="text-primary block">Un donante</span>
                   cuatro vidas
                 </h1>

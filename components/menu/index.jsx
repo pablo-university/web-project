@@ -6,7 +6,7 @@ import PrimaryButton from 'components/buttons/PrimaryButton'
 
 export default function index() {
   return (
-    <nav className="navbar bg-base-100 [ shadow rounded-2xl md:px-8 ]">
+    <nav className="navbar bg-base-100 [ shadow md:rounded-2xl md:px-8 ]">
       <div className="flex-1">
         <Link href="/">
           <a>
@@ -20,7 +20,7 @@ export default function index() {
         </Link>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal p-0 [ hidden lg:flex gap-1 ]">
+        <ul className="menu menu-horizontal p-0 [ hidden md:flex gap-1 ]">
           <li>
             <Link href="/donationPoints">
               <a>Puntos de donación</a>
@@ -61,7 +61,7 @@ export default function index() {
             </a>
           </Link>
         </ul>
-        <ul className="menu menu-horizontal p-0 [ blok lg:hidden ]">
+        <ul className="menu menu-horizontal p-0 [ blok md:hidden ]">
           <Trigger>Menú</Trigger>
         </ul>
       </div>
