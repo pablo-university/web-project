@@ -1,5 +1,6 @@
 import coverMaria from 'img/cover-maria.jpg'
 import coverFranco from 'img/cover-franco.jpg'
+import reserva from "img/donation-point/reserva.svg";
 
 export const articles = [
   {
@@ -22,4 +23,21 @@ export const configs = {
       image: coverFranco,
     },
   ],
+}
+export const pages = {
+  home: {},
+  donationPoint: {
+    title: 'Puntos de donación',
+    description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
+    image: reserva,
+    points: [
+      {
+        title:'',
+        place:'',
+        date:'',
+        hour:'',
+        description: ''
+      }
+    ]
+  }
 }
