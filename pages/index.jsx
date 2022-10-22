@@ -30,7 +30,7 @@ export default function Home() {
           >
             <div className="flex flex-col w-full md:flex-row [ container gap-8 mt-24 ]">
               <div className="grid flex-grow rounded-box place-items-start [ basis-full text-start gap-4 ]">
-                <h1 className="text-5xl md:text-8xl font-bold">
+                <h1>
                   <span className="text-primary block">Un donante</span>
                   cuatro vidas
                 </h1>
@@ -75,7 +75,7 @@ export default function Home() {
             <Container>
               <section className="grid md:grid-cols-2 gap-4 md:gap-16">
                 <div className="grid justify-items-start gap-4">
-                  <h2 className="text-4xl">Hemocentro</h2>
+                  <h2>Hemocentro</h2>
                   <p>
                     Desde el 2009 somos el primer centro de donación de sangre y
                     de producción de hemocomponentes de la región Este de
@@ -102,7 +102,7 @@ export default function Home() {
                   </p>
                   <PrimaryOutlineButton>Conocer más</PrimaryOutlineButton>
                 </div>
-                <div className="row-start-1 md:row-start-auto">
+                <div className="row-start-1 md:row-start-auto md:mt-20">
                   <img src={hemocentroImage.src} alt="hemocentro foto" />
                 </div>
               </section>
@@ -111,10 +111,14 @@ export default function Home() {
             <Container>
               <section className="grid md:grid-cols-2 gap-4 md:gap-16">
                 <div>
-                  <img src={hemocentroImage.src} alt="hemocentro foto" />
+                  <img
+                    className="md:mt-20"
+                    src={hemocentroImage.src}
+                    alt="hemocentro foto"
+                  />
                 </div>
                 <div className="grid justify-items-start gap-4">
-                  <h2 className="text-4xl">Hemocentro</h2>
+                  <h2>Hemocentro</h2>
                   <p>
                     Desde el 2009 somos el primer centro de donación de sangre y
                     de producción de hemocomponentes de la región Este de
