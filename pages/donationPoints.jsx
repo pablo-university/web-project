@@ -2,6 +2,7 @@ import DbContext from 'context/db'
 import { useContext } from 'react'
 import Layout from 'components/layouts/Layout'
 import Container from 'components/layouts/Container'
+import ContainerSeparator from 'components/layouts/ContainerSeparator'
 import Heading from 'components/layouts/Heading'
 import DonationPoint from 'components/DonationPoint'
 
@@ -16,7 +17,6 @@ export default function DonationPoints() {
       },
     },
   } = useContext(DbContext)
-  console.log(points)
   return (
     <Layout>
       <Container>
@@ -26,21 +26,22 @@ export default function DonationPoints() {
           imageUrl={src}
         ></Heading>
       </Container>
-      <Container>
+      <ContainerSeparator>
         {points.map(
           ({ title, place, date, hour, description, mapSrc }, index) => (
-            <DonationPoint
-              key={index}
-              title={title}
-              place={place}
-              date={date}
-              hour={hour}
-              description={description}
-              mapSrc={mapSrc}
-            />
+            <Container key={index}>
+              <DonationPoint
+                title={title}
+                place={place}
+                date={date}
+                hour={hour}
+                description={description}
+                mapSrc={mapSrc}
+              />
+            </Container>
           )
         )}
-      </Container>
+      </ContainerSeparator>
     </Layout>
   )
 }
