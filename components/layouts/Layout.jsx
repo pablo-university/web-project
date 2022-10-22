@@ -1,15 +1,18 @@
 import NavBar from 'components/NavBar'
 import Container from 'components/layouts/Container'
 import Drawer from 'components/drawer/index'
+import Menu from 'components/NavBar/Menu'
 
 export default function Layout({ children, main }) {
   return (
     <Drawer
       aside={
-        <p>
-          content drawer, renderizar los items del menu, crear otro componente
-          menu
-        </p>
+        <Menu
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        ></Menu>
       }
     >
       <div className="layout grid">

@@ -7,9 +7,6 @@ export default function index({ children, aside }) {
         <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
         <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
           {aside}
-          <li>
-            <a>xxx</a>
-          </li>
         </ul>
       </div>
     </div>

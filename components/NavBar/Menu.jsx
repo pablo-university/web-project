@@ -1,9 +1,12 @@
 import Link from 'next/link'
 import PrimaryButton from 'components/buttons/PrimaryButton'
 
-export default function Items() {
+export default function Menu({ className, style }) {
   return (
-    <ul className="menu menu-horizontal p-0 [ hidden md:flex gap-1 ]">
+    <ul
+      className={`menu menu-horizontal p-0 [ hidden md:flex gap-1 ${className} ]`}
+      style={style}
+    >
       <li>
         <Link href="/donationPoints">
           <a>Puntos de donación</a>
