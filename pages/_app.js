@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import '../styles/globals.css'
 import { BASE_PATH } from 'utils/index'
+import DbContext from "context/db";
+import { pages } from "db/index";
+
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -23,7 +26,11 @@ function MyApp({ Component, pageProps }) {
           href={`${BASE_PATH}/favicon_io/favicon.ico`}
         ></link>
       </Head>
-      <Component {...pageProps} />
+      <DbContext.Provider value={{
+        pages
+      }}>
+        <Component {...pageProps} />
+      </DbContext.Provider>
     </>
   )
 }

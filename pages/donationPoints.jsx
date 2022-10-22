@@ -1,16 +1,23 @@
 import Layout from 'components/layouts/Layout'
 import Container from 'components/layouts/Container'
 import Heading from 'components/layouts/Heading'
+import DbContext from 'context/db'
+import { useContext } from 'react'
 
-export default function donationPoints() {
+export default function DonationPoints() {
+  const {
+    pages: {
+      donationPoint: {
+        title,
+        description,
+        image: { src },
+      },
+    },
+  } = useContext(DbContext)
   return (
     <Layout>
       <Container>
-        <Heading
-          title="description"
-          description="description"
-          imageUrl="https://cdn.pixabay.com/photo/2022/10/16/13/53/early-morning-7525151_960_720.jpg"
-        >
+        <Heading title={title} description={description} imageUrl={src}>
           mas contenido
         </Heading>
       </Container>
