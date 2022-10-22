@@ -1,8 +1,8 @@
+import DbContext from 'context/db'
+import { useContext } from 'react'
 import Layout from 'components/layouts/Layout'
 import Container from 'components/layouts/Container'
 import Heading from 'components/layouts/Heading'
-import DbContext from 'context/db'
-import { useContext } from 'react'
 
 export default function DonationPoints() {
   const {

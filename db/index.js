@@ -1,6 +1,7 @@
 import coverMaria from 'img/cover-maria.jpg'
 import coverFranco from 'img/cover-franco.jpg'
-import reserva from "img/donation-point/reserva.svg";
+import donationPoint from "img/donation-point/donation-point.svg";
+import blog from "img/blog/blog.svg";
 
 export const articles = [
   {
@@ -29,7 +30,7 @@ export const pages = {
   donationPoint: {
     title: 'Puntos de donación',
     description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
-    image: reserva,
+    image: donationPoint,
     points: [
       {
         title:'',
@@ -39,5 +40,10 @@ export const pages = {
         description: ''
       }
     ]
+  },
+  blog: {
+    title: 'blog',
+    description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
+    image: blog,
   }
 }
