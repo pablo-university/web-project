@@ -5,11 +5,24 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
   },
   plugins: [require("daisyui")],
-  // daisyUI config (optional)
   daisyui: {
     logs: true,
-  }
-}
+    themes: [
+      {
+        default: {
+          primary: "#DD3333",
+          secondary: "#881337",
+          accent: "#37CDBE",
+          neutral: "#515151",
+          "base-100": "#FFFFFF",
+          info: "#3ABFF8",
+          success: "#36D399",
+          warning: "#FBBD23",
+          error: "#F87272",
+        },
+      },
+    ],
+  },
+};

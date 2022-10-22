@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+    :root {
+        /* --p: 0 71% 53%; */
+        /* primary color para daisyui */
+        --pc: 0 0% 100%;
+    }
+
+    * {
+        font-family: 'Titillium Web', sans-serif;
+    }
+
+    h1 {
+        @apply text-5xl;
+        @apply font-bold;
+    }
+
+    @media screen(md) {
+        h1 {
+            @apply text-8xl;
+        }
+    }
+
+    h2 {
+        @apply text-4xl;
+        @apply font-bold;
+    }
+
+    @media screen(md) {
+        h2 {
+            @apply text-5xl;
+        }
+    }
+
+    h3 {
+        @apply text-4xl;
+        @apply font-bold;
+    }
+
+    h4 {
+        @apply text-2xl;
+        @apply font-bold;
+    }
+}
