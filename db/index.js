@@ -27,17 +27,18 @@ export const configs = {
 }
 export const pages = {
   home: {},
-  donationPoint: {
+  donationPoints: {
     title: 'Puntos de donación',
     description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
     image: donationPoint,
     points: [
       {
-        title:'',
-        place:'',
-        date:'',
-        hour:'',
-        description: ''
+        title:'test',
+        place:'test',
+        date:'test',
+        hour:'test',
+        description: 'test',
+        mapSrc:'https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6557.188775743783!2d-56.087894!3d-34.7406171!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2suy!4v1666480283593!5m2!1ses-419!2suy'
       }
     ]
   },
