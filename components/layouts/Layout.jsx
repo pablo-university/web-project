@@ -1,4 +1,4 @@
-import Menu from 'components/menu'
+import NavBar from 'components/NavBar'
 import Container from 'components/layouts/Container'
 import Drawer from 'components/drawer/index'
 
@@ -15,7 +15,7 @@ export default function Layout({ children, main }) {
       <div className="layout grid">
         <header className="row-[1/2] col-[1/2] z-10 md:mt-8">
           <Container className="p-0">
-            <Menu />
+            <NavBar />
           </Container>
         </header>
         {!main && <main>{children}</main>}
