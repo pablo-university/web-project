@@ -5,8 +5,16 @@ import blog from "img/blog/blog.svg";
 
 export const articles = [
   {
-    name: '',
-    description: 'asdasd',
+    title: 'test',
+    description: 'test',
+    date: 'test',
+    thumbnail: 'https://placeimg.com/400/225/arch'
+  },
+  {
+    title: 'test',
+    description: 'test',
+    date: 'test',
+    thumbnail: 'https://placeimg.com/400/225/arch'
   },
 ]
 export const configs = {
@@ -62,6 +70,7 @@ export const pages = {
     title: 'blog',
     description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
     image: blog,
+    articles
   },
   donate: {
     title: 'donate',
