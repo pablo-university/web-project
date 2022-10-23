@@ -5,6 +5,9 @@ import Container from 'components/layouts/Container'
 import ContainerSeparator from 'components/layouts/ContainerSeparator'
 import Heading from 'components/layouts/Heading'
 import DonationPoint from 'components/DonationPoint'
+import TextInput from 'components/form/TextInput'
+import PrimaryButton from 'components/buttons/PrimaryButton'
+import ContainerGrid from 'components/layouts/ContainerGrid'
 
 export default function DonationPoints() {
   const {
@@ -19,14 +22,15 @@ export default function DonationPoints() {
   } = useContext(DbContext)
   return (
     <Layout>
-      <Container>
-        <Heading
-          title={title}
-          description={description}
-          imageUrl={src}
-        ></Heading>
-      </Container>
       <ContainerSeparator>
+        <Container>
+          <Heading title={title} description={description} imageUrl={src}>
+            <ContainerGrid className="items-center md:gap-6">
+              <TextInput label="Filtrar puntos de donación" />
+              <PrimaryButton className="mt-4">Filtrar lugares</PrimaryButton>
+            </ContainerGrid>
+          </Heading>
+        </Container>
         {points.map(
           ({ title, place, date, hour, description, mapSrc }, index) => (
             <Container key={index}>
