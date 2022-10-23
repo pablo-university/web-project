@@ -10,6 +10,10 @@ import RoundedSmall from 'components/buttons/RoundedSmall'
 import PrimaryOutlineButton from 'components/buttons/PrimaryOutlineButton'
 import { configs } from 'db'
 import hemocentroImage from 'img/home/hemocentro.jpg'
+import logoHemovida from 'img/home/logo-hemovida.jpg'
+import logoAsse from 'img/home/logo-asse.jpg'
+import logoSns from 'img/home/logo-sns.jpg'
+import ContainerGrid from 'components/layouts/ContainerGrid'
 
 export default function Home() {
   const [testimonials] = useState(configs.testimonials)
@@ -145,6 +149,21 @@ export default function Home() {
                   </p>
                   <PrimaryOutlineButton>Conocer más</PrimaryOutlineButton>
                 </div>
+              </section>
+            </Container>
+
+            <Container>
+              <section className="grid gap-6 md:gap-12">
+                <h2 className="text-center">Quienes apoyan</h2>
+                <ContainerGrid className="justify-items-center gap-6 md:gap-12">
+                  <img src={logoAsse.src} alt="logoAsse" className="max-w-xs" />
+                  <img
+                    src={logoHemovida.src}
+                    alt="logoHemovida"
+                    className="max-w-xs"
+                  />
+                  <img src={logoSns.src} alt="logoSns" className="max-w-xs" />
+                </ContainerGrid>
               </section>
             </Container>
           </ContainerSeparator>
