@@ -28,8 +28,7 @@ export default function Blog() {
           </Heading>
         </Container>
         <Container>
-          --donation points
-          <ContainerGrid>
+          <ContainerGrid className="justify-items-center gap-6">
             {articles.map(({ title, description, date, thumbnail }, index) => (
               <ArticleCard
                 key={index}
@@ -37,7 +36,7 @@ export default function Blog() {
                 date={date}
                 imageSrc={thumbnail}
               >
-                content
+                {description}
               </ArticleCard>
             ))}
           </ContainerGrid>
