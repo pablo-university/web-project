@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import Layout from 'components/layouts/Layout'
 import Container from 'components/layouts/Container'
 import ContainerGrid from 'components/layouts/ContainerGrid'
+import ContainerSeparator from 'components/layouts/ContainerSeparator'
 import Heading from 'components/layouts/Heading'
 import ArticleCard from 'components/cards/ArticleCard'
 
@@ -20,26 +21,28 @@ export default function Blog() {
   console.log(articles)
   return (
     <Layout>
-      <Container>
-        <Heading title={title} description={description} imageUrl={src}>
-          --mas contenido
-        </Heading>
-      </Container>
-      <Container>
-        --donation points
-        <ContainerGrid>
-          {articles.map(({ title, description, date, thumbnail }, index) => (
-            <ArticleCard
-              key={index}
-              title={title}
-              date={date}
-              imageSrc={thumbnail}
-            >
-              content
-            </ArticleCard>
-          ))}
-        </ContainerGrid>
-      </Container>
+      <ContainerSeparator>
+        <Container>
+          <Heading title={title} description={description} imageUrl={src}>
+            --mas contenido
+          </Heading>
+        </Container>
+        <Container>
+          --donation points
+          <ContainerGrid>
+            {articles.map(({ title, description, date, thumbnail }, index) => (
+              <ArticleCard
+                key={index}
+                title={title}
+                date={date}
+                imageSrc={thumbnail}
+              >
+                content
+              </ArticleCard>
+            ))}
+          </ContainerGrid>
+        </Container>
+      </ContainerSeparator>
     </Layout>
   )
 }
