@@ -5,15 +5,15 @@ import blog from "img/blog/blog.svg";
 
 export const articles = [
   {
-    title: 'test',
-    description: 'test',
-    date: 'test',
+    title: 'Programa educativo',
+    description: 'El Programa Educativo cuenta con la colaboración de la Asociación Uruguaya de Fútbol (AUF) que permi te, a los niños y jóvenes promotores, visitar el estadio Centenario y presenciar partidos de la selección uruguaya',
+    date: '27 de octubre',
     thumbnail: 'https://placeimg.com/400/225/arch'
   },
   {
-    title: 'test',
-    description: 'test',
-    date: 'test',
+    title: 'Compromiso social',
+    description: 'A lo largo de todos estos años, hemos recibido la colaboración de empresas e instituciones. Acuerdos decooperación con cadenas de supermercados y asociaciones permitieron el desarrollo de la construcción, mantenimiento y progreso del Hemocentro.',
+    date: '27 de octubre',
     thumbnail: 'https://placeimg.com/400/225/arch'
   },
 ]

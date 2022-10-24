@@ -9,7 +9,7 @@ export default function ArticleCard({ date, imageSrc = '', title, children }) {
           {date}
         </time>
         <h2 className="card-title">{title}</h2>
-        <p>{children}</p>
+        <p className="line-clamp-4">{children}</p>
       </div>
     </div>
   )
