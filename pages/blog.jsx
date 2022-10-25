@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import DbContext, { useContext } from 'context/db'
 import Layout from 'components/layouts/Layout'
 import Container from 'components/layouts/Container'
@@ -29,14 +30,13 @@ export default function Blog() {
           <ContainerGrid className="grid-cols-1 md:grid-cols-3 justify-items-center gap-4">
             {articles.map(
               ({ title, description, date, thumbnail: { src } }, index) => (
-                <ArticleCard
-                  key={index}
-                  title={title}
-                  date={date}
-                  imageSrc={src}
-                >
-                  {description}
-                </ArticleCard>
+                <Link key={index} href={`/articles/${index}`}>
+                  <a>
+                    <ArticleCard title={title} date={date} imageSrc={src}>
+                      {description}
+                    </ArticleCard>
+                  </a>
+                </Link>
               )
             )}
           </ContainerGrid>
