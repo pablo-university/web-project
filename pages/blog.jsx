@@ -18,7 +18,6 @@ export default function Blog() {
       },
     },
   } = useContext(DbContext)
-  console.log(articles)
   return (
     <Layout>
       <ContainerSeparator>
@@ -28,17 +27,19 @@ export default function Blog() {
           </Heading>
         </Container>
         <Container>
-          <ContainerGrid className="justify-items-center gap-6 grid-cols-4">
-            {articles.map(({ title, description, date, thumbnail }, index) => (
-              <ArticleCard
-                key={index}
-                title={title}
-                date={date}
-                imageSrc={thumbnail}
-              >
-                {description}
-              </ArticleCard>
-            ))}
+          <ContainerGrid className="grid-cols-4 justify-items-center gap-6">
+            {articles.map(
+              ({ title, description, date, thumbnail: { src } }, index) => (
+                <ArticleCard
+                  key={index}
+                  title={title}
+                  date={date}
+                  imageSrc={src}
+                >
+                  {description}
+                </ArticleCard>
+              )
+            )}
           </ContainerGrid>
         </Container>
       </ContainerSeparator>
