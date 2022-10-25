@@ -185,7 +185,7 @@ export default function Home() {
             </Container>
 
             <Container>
-              <section>
+              <section className="grid gap-6 md:gap-12">
                 <h2>Artículos recientes</h2>
                 <ContainerGrid className="grid-cols-1 md:grid-cols-3 justify-items-center gap-6">
                   {articles.map(
