@@ -28,7 +28,7 @@ export default function Blog() {
           </Heading>
         </Container>
         <Container>
-          <ContainerGrid className="justify-items-center gap-6">
+          <ContainerGrid className="justify-items-center gap-6 grid-cols-4">
             {articles.map(({ title, description, date, thumbnail }, index) => (
               <ArticleCard
                 key={index}
