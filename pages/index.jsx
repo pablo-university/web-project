@@ -14,6 +14,9 @@ import logoHemovida from 'img/home/logo-hemovida.jpg'
 import logoAsse from 'img/home/logo-asse.jpg'
 import logoSns from 'img/home/logo-sns.jpg'
 import ContainerGrid from 'components/layouts/ContainerGrid'
+import DbContext from 'context/db'
+import { useContext } from 'react'
+import ArticleCard from 'components/cards/ArticleCard'
 
 export default function Home() {
   const [testimonials] = useState(configs.testimonials)
@@ -22,6 +25,12 @@ export default function Home() {
   const handleChangeHeroImage = (targetTestimonialId) => {
     setActualIndex(targetTestimonialId)
   }
+
+  const {
+    pages: {
+      blog: { articles },
+    },
+  } = useContext(DbContext)
   return (
     <Layout
       main={
@@ -155,14 +164,43 @@ export default function Home() {
             <Container>
               <section className="grid gap-6 md:gap-12">
                 <h2 className="text-center">Quienes apoyan</h2>
-                <ContainerGrid className="justify-items-center gap-6 md:gap-12">
-                  <img src={logoAsse.src} alt="logoAsse" className="max-w-xs" />
+                <ContainerGrid className="grid-cols-1 md:grid-cols-3 justify-items-center gap-6 md:gap-12">
+                  <img
+                    src={logoAsse.src}
+                    alt="logoAsse"
+                    className="max-w-xs w-full"
+                  />
                   <img
                     src={logoHemovida.src}
                     alt="logoHemovida"
-                    className="max-w-xs"
+                    className="max-w-xs w-full"
                   />
-                  <img src={logoSns.src} alt="logoSns" className="max-w-xs" />
+                  <img
+                    src={logoSns.src}
+                    alt="logoSns"
+                    className="max-w-xs w-full"
+                  />
+                </ContainerGrid>
+              </section>
+            </Container>
+
+            <Container>
+              <section>
+                <h2>Artículos recientes</h2>
+                <ContainerGrid className="grid-cols-1 md:grid-cols-3 justify-items-center gap-6">
+                  {articles.map(
+                    ({ title, description, date, thumbnail: { src } }, index) =>
+                      index < 4 && (
+                        <ArticleCard
+                          key={index}
+                          title={title}
+                          date={date}
+                          imageSrc={src}
+                        >
+                          {description}
+                        </ArticleCard>
+                      )
+                  )}
                 </ContainerGrid>
               </section>
             </Container>
