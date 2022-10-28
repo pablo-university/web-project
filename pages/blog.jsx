@@ -27,7 +27,7 @@ export default function Blog() {
           </Heading>
         </Container>
         <Container>
-          <ContainerGrid className="grid-cols-1 md:grid-cols-3 justify-items-center gap-4">
+          <ContainerGrid className="grid-cols-1 md:grid-cols-3 xl:grid-cols-4 justify-items-center gap-4">
             {articles.map(
               ({ title, description, date, thumbnail: { src } }, index) => (
                 <Link key={index} href={`/articles/${index}`}>
