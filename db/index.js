@@ -10,7 +10,9 @@ export const articles = [
     title: 'Programa educativo',
     description: 'El Programa Educativo cuenta con la colaboración de la Asociación Uruguaya de Fútbol (AUF) que permi te, a los niños y jóvenes promotores, visitar el estadio Centenario y presenciar partidos de la selección uruguaya',
     date: '27 de octubre',
-    thumbnail: programaEducativo
+    thumbnail: programaEducativo,
+    cover: programaEducativo,
+    extension: programaEducativo
   },
   {
     title: 'Compromiso social',

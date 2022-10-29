@@ -37,7 +37,7 @@ export default function DonationPoint({
           width="400"
           height="300"
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
     </ContainerGrid>
