@@ -2,7 +2,7 @@ version: '3'
 
 services:
   strapi:
-    container_name: strapi-v3
+    container_name: strapi
     image: strapi/strapi
     environment:
       - DATABASE_CLIENT=mysql
@@ -19,7 +19,7 @@ services:
       - db
 
   db:
-    container_name: mysql-v3
+    container_name: mysql
     image: mysql:5.7
     restart: always
     command: --default-authentication-plugin=mysql_native_password
