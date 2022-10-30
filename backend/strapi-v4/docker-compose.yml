@@ -4,9 +4,7 @@ services:
   strapi:
     container_name: strapi
     # image: strapi/strapi
-    build:
-       context: ./app
-       dockerfile: Dockerfile
+    build: /app
     environment:
       - DATABASE_CLIENT=mysql
       - APP_KEYS="toBeModified1,toBeModified2"

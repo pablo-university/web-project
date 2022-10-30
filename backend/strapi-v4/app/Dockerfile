@@ -17,11 +17,12 @@ ENV API_TOKEN_SALT=tobemodified
 ENV ADMIN_JWT_SECRET=tobemodified
 ENV JWT_SECRET=tobemodified
 # ====
-WORKDIR /opt/
+# WORKDIR /opt/
+WORKDIR /opt/app
 COPY ./package.json ./package-lock.json ./
 ENV PATH /opt/node_modules/.bin:$PATH
+RUN npm install --platform=linuxmusl --arch=x64 sharp
 RUN npm install
-WORKDIR /opt/app
 COPY ./ .
 RUN npm run build
 EXPOSE 1337
