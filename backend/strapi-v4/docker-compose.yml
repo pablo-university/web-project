@@ -2,13 +2,13 @@ version: '3'
 
 services:
   strapi:
-    container_name: strapi
+    container_name: strapi-hemocentro
     # image: strapi/strapi
     build: /app
     environment:
       - DATABASE_CLIENT=mysql
       - APP_KEYS="toBeModified1,toBeModified2"
-      - DATABASE_HOST=mysql
+      - DATABASE_HOST=mysql-hemoncentro
       - DATABASE_PORT=3306
       - DATABASE_NAME=strapi
       - DATABASE_USERNAME=strapi
@@ -25,7 +25,7 @@ services:
      - db
 
   db:
-    container_name: mysql
+    container_name: mysql-hemoncentro
     image: mysql:5.7
     restart: always
     command: --default-authentication-plugin=mysql_native_password
