@@ -2,7 +2,7 @@ import coverMaria from 'img/cover-maria.jpg'
 import coverFranco from 'img/cover-franco.jpg'
 import donationPoint from "img/donation-point/donation-point.svg";
 import articlesSvg from "img/articles/articles.svg";
-import { compromisoSocial, conexiones, confort, encuentros, personal, polo, practicas, programaEducativo } from "img/articles/articles";
+import { compromisoSocial, conexiones, confort, encuentros, personal, polo, practicas, programaEducativo } from "img/articles";
 
 
 export const articles = [
@@ -11,7 +11,6 @@ export const articles = [
     description: 'El Programa Educativo cuenta con la colaboración de la Asociación Uruguaya de Fútbol (AUF) que permi te, a los niños y jóvenes promotores, visitar el estadio Centenario y presenciar partidos de la selección uruguaya',
     date: '27 de octubre',
     thumbnail: programaEducativo,
-    vector:'',
     cover: programaEducativo,
     coverExtension: programaEducativo
   },
@@ -20,7 +19,6 @@ export const articles = [
     description: 'A lo largo de todos estos años, hemos recibido la colaboración de empresas e instituciones. Acuerdos decooperación con cadenas de supermercados y asociaciones permitieron el desarrollo de la construcción, mantenimiento y progreso del Hemocentro.',
     date: '27 de octubre',
     thumbnail: compromisoSocial,
-    vector:'',
     cover: compromisoSocial,
     coverExtension: programaEducativo
   },
@@ -29,7 +27,6 @@ export const articles = [
     description: 'Es vocación y lo ha sido desde siempre, la capacitación de nuestros recursos humanos. Para ello, en el Hemocentro Re gional de Maldonado creamos las condiciones necesarias para el acceso a la actualización de conocimiento, técnicas inno vadoras y avances científicos. Alentamos y propiciamos que nuestro personal asista a cursos, congresos e intercambios en Uruguay y en el exterior.',
     date: '27 de octubre',
     thumbnail: personal,
-    vector:'',
     cover: personal,
     coverExtension: personal
   },
@@ -38,7 +35,6 @@ export const articles = [
     description: 'Con el fin de favorecer la educación continua en medicina trans fusional, desde el Hemocentro organizamos y fomentamos la participación del personal en talleres, cursos y congresos',
     date: '27 de octubre',
     thumbnail: encuentros,
-    vector:'',
     cover: encuentros,
     coverExtension: encuentros
   },
@@ -47,7 +43,6 @@ export const articles = [
     description: 'El punto de partida de un centro de hemoterapia mode lo fue contar con un proyecto constructivo de avanzada. El diseño estuvo a cargo de la arquitecta Rossana Cimino quien lo hizo de forma totalmente honoraria.',
     date: '27 de octubre',
     thumbnail: confort,
-    vector:'',
     cover: confort,
     coverExtension: confort
   },
@@ -56,7 +51,6 @@ export const articles = [
     description: 'Nuestro centro tiene las puertas abiertas a la investigación científica en medicina transfusional. Es por eso que alenta mos a nuestros técnicos a desarrollar trabajos académicos y recibimos a estudiantes del exterior.',
     date: '27 de octubre',
     thumbnail:polo,
-    vector:'',
     cover: polo,
     coverExtension: polo
   },
@@ -65,7 +59,6 @@ export const articles = [
     description: 'Participamos en la formación de nuevos Técnicos en Hemo terapia a través de un convenio con la Escuela Universitaria de Tecnología Médica (EUTM) de la Facultad de Medicina de la Universidad de la República por el cual estudiantes avan zados realizan pasantías en el Hemocentro. Para ello, ambas instituciones, Hemocentro y EUTM hemos creado una Unidad Docente Asistencial (UDA) que permite a los alumnos realizar prácticas cortas y remuneradas en el Hemocentro, bajo la tu toría de un docente.',
     date: '27 de octubre',
     thumbnail:practicas,
-    vector:'',
     cover: practicas,
     coverExtension: practicas
   },
@@ -74,7 +67,6 @@ export const articles = [
     description: 'Bajo la consigna "Sangre celeste...y donamos para que no te falte" decenas de niños pudieron disfrutar de los encuentros de portivos en nuestro principal escenario. Y tuvieron la oportuni dad de ver a los futbolistas que nos representan en campeonatos mundiales.',
     date: '27 de octubre',
     thumbnail: conexiones,
-    vector:'',
     cover: conexiones,
     coverExtension: conexiones
   },

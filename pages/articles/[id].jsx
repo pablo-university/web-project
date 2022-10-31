@@ -9,13 +9,24 @@ import { articles } from 'db'
 import Heading from 'components/layouts/Heading'
 import DbContext, { useContext } from 'context/db'
 
-export default function Article({ article: { title, description, date } }) {
+export default function Article({
+  article: {
+    title,
+    description,
+    date,
+    thumbnail: { thumbnailSrc },
+  },
+}) {
   return (
     <Layout>
       <ContainerSeparator>
         <Container>
           {title && (
-            <Heading title={title} description={description} imageUrl={''}>
+            <Heading
+              title={title}
+              description={description}
+              imageUrl={thumbnailSrc}
+            >
               <time dateTime={date}>{date}</time>
             </Heading>
           )}
