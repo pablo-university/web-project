@@ -107,7 +107,7 @@ export const pages = {
     ]
   },
   blog: {
-    title: 'blog',
+    title: '???blog',
     description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
     image: blog,
     articles
@@ -122,6 +122,10 @@ export const pages = {
     description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
     image: blog,
   },
+  /** 
+   * TODO
+   * Borrar esta configuracion ya que no tenemos una pagina articles
+    */
   articles: {
     title: 'articles',
     description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',

@@ -10,7 +10,7 @@ import ArticleCard from 'components/cards/ArticleCard'
 export default function Blog() {
   const {
     pages: {
-      blog: {
+      articles: {
         title,
         description,
         image: { src },

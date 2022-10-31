@@ -7,11 +7,18 @@ import ArticleCard from 'components/cards/ArticleCard'
 import { useRouter } from 'next/router'
 import { articles } from 'db'
 import Heading from 'components/layouts/Heading'
+import DbContext, { useContext } from 'context/db'
 
-export default function Article({ title, description, date }) {
-  // TODO
-
-  // REVISAR QUE LLEGUEN LOS PARAMETROS
+export default function Article({ article: { title, description, date } }) {
+  /*  const {
+    pages: {
+      blog: {
+        title,
+        description,
+        image: { src },
+      },
+    },
+  } = useContext(DbContext) */
   return (
     <Layout>
       <ContainerSeparator>
@@ -68,6 +75,7 @@ export async function getStaticPaths() {
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps({ params: { id } }) {
   const article = articles[id]
+  console.log(article)
   return {
     // Passed to the page component as props
     props: { article },
