@@ -13,6 +13,7 @@ export default function Article({
     description,
     date,
     thumbnail: { src: thumbnailSrc },
+    cover: { src: coverSrc },
   },
 }) {
   return (
@@ -30,7 +31,7 @@ export default function Article({
           )}
         </Container>
 
-        <Container>{/* <img src={coverSrc} alt="asd" /> */}</Container>
+        <img src={coverSrc} alt="cover image" />
 
         <Container>
           <section className="grid gap-6 md:gap-12">

@@ -2,8 +2,10 @@ import coverMaria from 'img/cover-maria.jpg'
 import coverFranco from 'img/cover-franco.jpg'
 import donationPoint from "img/donation-point/donation-point.svg";
 import articlesSvg from "img/articles/articles.svg";
-import { compromisoSocial, conexiones, confort, encuentros, personal, polo, practicas, programaEducativo, defaultArticlesSvg } from "img/articles";
+import { compromisoSocial, conexiones, confort, encuentros, personal, polo, practicas, defaultArticlesSvg } from "img/articles";
 
+// importaciones de imágenes de articulos
+import programaEducativo from "img/articles/programaEducativo";
 
 export const articles = [
   {
@@ -11,8 +13,8 @@ export const articles = [
     description: 'El Programa Educativo cuenta con la colaboración de la Asociación Uruguaya de Fútbol (AUF) que permi te, a los niños y jóvenes promotores, visitar el estadio Centenario y presenciar partidos de la selección uruguaya',
     date: '27 de octubre',
     thumbnail: defaultArticlesSvg,
-    cover: programaEducativo,
-    coverExtension: programaEducativo
+    cover: programaEducativo.cover,
+    coverExtension: programaEducativo.coverExtension
   },
   {
     title: 'Compromiso social',
@@ -20,7 +22,7 @@ export const articles = [
     date: '27 de octubre',
     thumbnail: defaultArticlesSvg,
     cover: compromisoSocial,
-    coverExtension: programaEducativo
+    coverExtension: compromisoSocial
   },
   {
     title: 'Personal en formación',
