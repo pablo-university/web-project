@@ -1,8 +1,8 @@
 import coverMaria from 'img/cover-maria.jpg'
 import coverFranco from 'img/cover-franco.jpg'
 import donationPoint from "img/donation-point/donation-point.svg";
-import blog from "img/blog/blog.svg";
-import { compromisoSocial, conexiones, confort, encuentros, personal, polo, practicas, programaEducativo } from "img/blog/articles";
+import articlesSvg from "img/articles/articles.svg";
+import { compromisoSocial, conexiones, confort, encuentros, personal, polo, practicas, programaEducativo } from "img/articles/articles";
 
 
 export const articles = [
@@ -135,17 +135,17 @@ export const pages = {
   donate: {
     title: 'donate',
     description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
-    image: blog,
+    image: articles,
   },
   hoursAndConditios: {
     title: 'hoursAndConditios',
     description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
-    image: blog,
+    image: articlesSvg,
   },
   articles: {
     title: 'articles',
     description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
-    image: blog,
+    image: articlesSvg,
     articles: articles
   }
 }

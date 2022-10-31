@@ -31,6 +31,7 @@ export default function Home() {
       articles: { articles },
     },
   } = useContext(DbContext)
+  console.log(articles)
   return (
     <Layout
       main={
