@@ -80,7 +80,6 @@ export const configs = {
   
 }
 export const pages = {
-  home: {},
   donationPoints: {
     title: 'Puntos de donación',
     description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
@@ -112,16 +111,7 @@ export const pages = {
       },
     ]
   },
-  donate: {
-    title: 'donate',
-    description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
-    image: articles,
-  },
-  hoursAndConditios: {
-    title: 'hoursAndConditios',
-    description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
-    image: articlesSvg,
-  },
+
   articles: {
     title: 'articles',
     description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',

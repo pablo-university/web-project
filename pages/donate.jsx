@@ -1,23 +1,19 @@
-import DbContext from 'context/db'
-import { useContext } from 'react'
 import Layout from 'components/layouts/Layout'
 import Container from 'components/layouts/Container'
 import Heading from 'components/layouts/Heading'
+import reservationImg from 'img/reservation/reservation.svg'
 
 export default function Donate() {
-  const {
-    pages: {
-      donate: {
-        title,
-        description,
-        image: { src },
-      },
-    },
-  } = useContext(DbContext)
   return (
     <Layout>
       <Container>
-        <Heading title={title} description={description} imageUrl={src}>
+        <Heading
+          title={'donate'}
+          description={
+            'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!'
+          }
+          imageUrl={reservationImg.src}
+        >
           --mas contenido
         </Heading>
       </Container>
