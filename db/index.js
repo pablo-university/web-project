@@ -1,5 +1,4 @@
-import coverMaria from 'img/cover-maria.jpg'
-import coverFranco from 'img/cover-franco.jpg'
+
 import donationPoint from "img/donation-point/donation-point.svg";
 import articlesSvg from "img/articles/articles.svg";
 import { compromisoSocial, conexiones, confort, encuentros, personal, polo, practicas, defaultArticlesSvg } from "img/articles";
@@ -78,20 +77,7 @@ export const articles = [
  * ya que no pertenece a una config
   */
 export const configs = {
-  testimonials: [
-    {
-      name: 'María',
-      description:
-        'Hoy han pasado 3 años desde que se vió envuelta en una situación la cuál le requirió una transfusión de sangre la cuál fué proporcionada por el Hemocentro Maldonado.',
-      image: coverMaria,
-    },
-    {
-      name: 'Franco',
-      description:
-        'Luego de sufrir un accidente se encontró bajo la necesidad de sangre, así fué como conoció el Hemocentro Maldonado, hoy se encuentra recuperada y feliz!',
-      image: coverFranco,
-    },
-  ],
+  
 }
 export const pages = {
   home: {},

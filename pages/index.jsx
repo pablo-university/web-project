@@ -8,7 +8,8 @@ import PrimaryButton from 'components/buttons/PrimaryButton'
 import TestimonialCard from 'components/cards/TestimonialCard'
 import RoundedSmall from 'components/buttons/RoundedSmall'
 import PrimaryOutlineButton from 'components/buttons/PrimaryOutlineButton'
-import { configs } from 'db'
+import coverMaria from 'img/cover-maria.jpg'
+import coverFranco from 'img/cover-franco.jpg'
 import hemocentroImage from 'img/home/hemocentro.jpg'
 import logoHemovida from 'img/home/logo-hemovida.jpg'
 import logoAsse from 'img/home/logo-asse.jpg'
@@ -19,7 +20,20 @@ import { useContext } from 'react'
 import ArticleCard from 'components/cards/ArticleCard'
 
 export default function Home() {
-  const [testimonials] = useState(configs.testimonials)
+  const [testimonials] = useState([
+    {
+      name: 'María',
+      description:
+        'Hoy han pasado 3 años desde que se vió envuelta en una situación la cuál le requirió una transfusión de sangre la cuál fué proporcionada por el Hemocentro Maldonado.',
+      image: coverMaria,
+    },
+    {
+      name: 'Franco',
+      description:
+        'Luego de sufrir un accidente se encontró bajo la necesidad de sangre, así fué como conoció el Hemocentro Maldonado, hoy se encuentra recuperada y feliz!',
+      image: coverFranco,
+    },
+  ])
   const [actualIndex, setActualIndex] = useState(0)
 
   const handleChangeHeroImage = (targetTestimonialId) => {
