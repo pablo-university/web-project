@@ -28,7 +28,7 @@ export default function Home() {
 
   const {
     pages: {
-      blog: { articles },
+      articles: { articles },
     },
   } = useContext(DbContext)
   return (

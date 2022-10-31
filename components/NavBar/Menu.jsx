@@ -13,7 +13,7 @@ export default function Menu({ className, style }) {
         </Link>
       </li>
       <li>
-        <Link href="/blog">
+        <Link href="/articles">
           <a>Blog</a>
         </Link>
       </li>

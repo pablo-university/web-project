@@ -7,7 +7,7 @@ import ContainerSeparator from 'components/layouts/ContainerSeparator'
 import Heading from 'components/layouts/Heading'
 import ArticleCard from 'components/cards/ArticleCard'
 
-export default function Blog() {
+export default function Articles() {
   const {
     pages: {
       articles: {

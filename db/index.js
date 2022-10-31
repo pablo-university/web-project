@@ -106,12 +106,12 @@ export const pages = {
       },
     ]
   },
-  blog: {
+  /* blog: {
     title: '???blog',
     description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
     image: blog,
     articles
-  },
+  }, */
   donate: {
     title: 'donate',
     description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
