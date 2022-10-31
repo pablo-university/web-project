@@ -29,7 +29,7 @@ export default function Articles() {
         <Container>
           <ContainerGrid className="grid-cols-1 md:grid-cols-3 xl:grid-cols-4 justify-items-center gap-4">
             {articles.map(
-              ({ title, description, date, thumbnail: { src } }, index) => (
+              ({ title, description, date, cover: { src } }, index) => (
                 <Link key={index} href={`/articles/${index}`}>
                   <a>
                     <ArticleCard title={title} date={date} imageSrc={src}>

@@ -6,3 +6,4 @@ export { default as personal } from "img/articles/personal.jpg";
 export { default as polo } from "img/articles/polo.jpg";
 export { default as practicas } from "img/articles/practicas.jpg";
 export { default as programaEducativo } from "img/articles/programa-educativo.jpg";
+export { default as defaultArticlesSvg } from "img/articles/default.svg";

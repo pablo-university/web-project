@@ -190,7 +190,7 @@ export default function Home() {
                 <h2>Artículos recientes</h2>
                 <ContainerGrid className="grid-cols-1 md:grid-cols-3 justify-items-center gap-6">
                   {articles.map(
-                    ({ title, description, date, thumbnail: { src } }, index) =>
+                    ({ title, description, date, cover: { src } }, index) =>
                       index < 3 && (
                         <ArticleCard
                           key={index}

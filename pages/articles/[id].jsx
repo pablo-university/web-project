@@ -4,17 +4,15 @@ import Container from 'components/layouts/Container'
 import ContainerSeparator from 'components/layouts/ContainerSeparator'
 import ContainerGrid from 'components/layouts/ContainerGrid'
 import ArticleCard from 'components/cards/ArticleCard'
-import { useRouter } from 'next/router'
 import { articles } from 'db'
 import Heading from 'components/layouts/Heading'
-import DbContext, { useContext } from 'context/db'
 
 export default function Article({
   article: {
     title,
     description,
     date,
-    thumbnail: { thumbnailSrc },
+    thumbnail: { src: thumbnailSrc },
   },
 }) {
   return (
@@ -39,7 +37,7 @@ export default function Article({
             <h2>Artículos recientes</h2>
             <ContainerGrid className="grid-cols-1 md:grid-cols-3 justify-items-center gap-6">
               {articles.map(
-                ({ title, description, date, thumbnail: { src } }, index) =>
+                ({ title, description, date, cover: { src } }, index) =>
                   index < 3 && (
                     <ArticleCard
                       key={index}
