@@ -11,52 +11,78 @@ export const articles = [
     description: 'El Programa Educativo cuenta con la colaboración de la Asociación Uruguaya de Fútbol (AUF) que permi te, a los niños y jóvenes promotores, visitar el estadio Centenario y presenciar partidos de la selección uruguaya',
     date: '27 de octubre',
     thumbnail: programaEducativo,
+    vector:'',
     cover: programaEducativo,
-    extension: programaEducativo
+    coverExtension: programaEducativo
   },
   {
     title: 'Compromiso social',
     description: 'A lo largo de todos estos años, hemos recibido la colaboración de empresas e instituciones. Acuerdos decooperación con cadenas de supermercados y asociaciones permitieron el desarrollo de la construcción, mantenimiento y progreso del Hemocentro.',
     date: '27 de octubre',
-    thumbnail: compromisoSocial
+    thumbnail: compromisoSocial,
+    vector:'',
+    cover: compromisoSocial,
+    coverExtension: programaEducativo
   },
   {
     title: 'Personal en formación',
     description: 'Es vocación y lo ha sido desde siempre, la capacitación de nuestros recursos humanos. Para ello, en el Hemocentro Re gional de Maldonado creamos las condiciones necesarias para el acceso a la actualización de conocimiento, técnicas inno vadoras y avances científicos. Alentamos y propiciamos que nuestro personal asista a cursos, congresos e intercambios en Uruguay y en el exterior.',
     date: '27 de octubre',
-    thumbnail: personal
+    thumbnail: personal,
+    vector:'',
+    cover: personal,
+    coverExtension: personal
   },
   {
     title: 'Encuentros internacionales',
     description: 'Con el fin de favorecer la educación continua en medicina trans fusional, desde el Hemocentro organizamos y fomentamos la participación del personal en talleres, cursos y congresos',
     date: '27 de octubre',
-    thumbnail: encuentros
+    thumbnail: encuentros,
+    vector:'',
+    cover: encuentros,
+    coverExtension: encuentros
   },
   {
     title: 'Confort, calidad y tecnología avanzada',
     description: 'El punto de partida de un centro de hemoterapia mode lo fue contar con un proyecto constructivo de avanzada. El diseño estuvo a cargo de la arquitecta Rossana Cimino quien lo hizo de forma totalmente honoraria.',
     date: '27 de octubre',
-    thumbnail: confort
+    thumbnail: confort,
+    vector:'',
+    cover: confort,
+    coverExtension: confort
   },
   {
     title: 'Polo de investigación',
     description: 'Nuestro centro tiene las puertas abiertas a la investigación científica en medicina transfusional. Es por eso que alenta mos a nuestros técnicos a desarrollar trabajos académicos y recibimos a estudiantes del exterior.',
     date: '27 de octubre',
-    thumbnail:polo
+    thumbnail:polo,
+    vector:'',
+    cover: polo,
+    coverExtension: polo
   },
   {
     title: 'Prácticas estudiantiles',
     description: 'Participamos en la formación de nuevos Técnicos en Hemo terapia a través de un convenio con la Escuela Universitaria de Tecnología Médica (EUTM) de la Facultad de Medicina de la Universidad de la República por el cual estudiantes avan zados realizan pasantías en el Hemocentro. Para ello, ambas instituciones, Hemocentro y EUTM hemos creado una Unidad Docente Asistencial (UDA) que permite a los alumnos realizar prácticas cortas y remuneradas en el Hemocentro, bajo la tu toría de un docente.',
     date: '27 de octubre',
-    thumbnail:practicas
+    thumbnail:practicas,
+    vector:'',
+    cover: practicas,
+    coverExtension: practicas
   },
   {
     title: 'Conexiones estratégicas',
     description: 'Bajo la consigna "Sangre celeste...y donamos para que no te falte" decenas de niños pudieron disfrutar de los encuentros de portivos en nuestro principal escenario. Y tuvieron la oportuni dad de ver a los futbolistas que nos representan en campeonatos mundiales.',
     date: '27 de octubre',
-    thumbnail: conexiones
+    thumbnail: conexiones,
+    vector:'',
+    cover: conexiones,
+    coverExtension: conexiones
   },
 ]
+/**
+ * Mover el contenido de este objeto a la página home
+ * ya que no pertenece a una config
+  */
 export const configs = {
   testimonials: [
     {
@@ -106,12 +132,6 @@ export const pages = {
       },
     ]
   },
-  /* blog: {
-    title: '???blog',
-    description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
-    image: blog,
-    articles
-  }, */
   donate: {
     title: 'donate',
     description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
@@ -122,10 +142,6 @@ export const pages = {
     description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
     image: blog,
   },
-  /** 
-   * TODO
-   * Borrar esta configuracion ya que no tenemos una pagina articles
-    */
   articles: {
     title: 'articles',
     description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',

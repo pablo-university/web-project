@@ -10,15 +10,6 @@ import Heading from 'components/layouts/Heading'
 import DbContext, { useContext } from 'context/db'
 
 export default function Article({ article: { title, description, date } }) {
-  /*  const {
-    pages: {
-      blog: {
-        title,
-        description,
-        image: { src },
-      },
-    },
-  } = useContext(DbContext) */
   return (
     <Layout>
       <ContainerSeparator>
