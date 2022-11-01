@@ -6,23 +6,25 @@ import ContainerGrid from 'components/layouts/ContainerGrid'
 import ContainerSeparator from 'components/layouts/ContainerSeparator'
 import Heading from 'components/layouts/Heading'
 import ArticleCard from 'components/cards/ArticleCard'
+import articlesSvg from 'img/articles/articles.svg'
 
 export default function Articles() {
   const {
     pages: {
-      articles: {
-        title,
-        description,
-        image: { src },
-        articles,
-      },
+      articles: { articles },
     },
   } = useContext(DbContext)
   return (
     <Layout>
       <ContainerSeparator>
         <Container>
-          <Heading title={title} description={description} imageUrl={src}>
+          <Heading
+            title={'articles'}
+            description={
+              'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!'
+            }
+            imageUrl={articlesSvg.src}
+          >
             --mas contenido
           </Heading>
         </Container>

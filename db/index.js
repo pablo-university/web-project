@@ -1,5 +1,4 @@
 
-import donationPoint from "img/donation-point/donation-point.svg";
 import articlesSvg from "img/articles/articles.svg";
 import { compromisoSocial, conexiones, confort, encuentros, personal, polo, practicas, defaultArticlesSvg } from "img/articles";
 
@@ -76,14 +75,11 @@ export const articles = [
  * Mover el contenido de este objeto a la página home
  * ya que no pertenece a una config
   */
-export const configs = {
+/* export const configs = {
   
-}
+} */
 export const pages = {
   donationPoints: {
-    title: 'Puntos de donación',
-    description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
-    image: donationPoint,
     points: [
       {
         title:'Chuy',
@@ -113,9 +109,6 @@ export const pages = {
   },
 
   articles: {
-    title: 'articles',
-    description: 'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!',
-    image: articlesSvg,
     articles: articles
   }
 }
