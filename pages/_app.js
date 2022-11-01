@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import '../styles/globals.css'
 import { BASE_PATH } from 'utils/index'
-import DbContext from "context/db";
+import AppContext from "context/app";
 import {  donationPoints } from "db/index";
 import { useState, useEffect } from "react";
 import { getArticles } from "connectors/getArticles";
@@ -37,13 +37,13 @@ function MyApp({ Component, pageProps }) {
           href={`${BASE_PATH}/favicon_io/favicon.ico`}
         ></link>
       </Head>
-      <DbContext.Provider value={{
+      <AppContext.Provider value={{
         // pages, 
         donationPoints,
         articles
       }}>
         <Component {...pageProps} />
-      </DbContext.Provider>
+      </AppContext.Provider>
     </>
   )
 }

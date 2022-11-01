@@ -1,4 +1,4 @@
-import DbContext from 'context/db'
+import AppContext from 'context/app'
 import { useContext } from 'react'
 import Layout from 'components/layouts/Layout'
 import Container from 'components/layouts/Container'
@@ -11,7 +11,7 @@ import ContainerGrid from 'components/layouts/ContainerGrid'
 import donationPointSvg from 'img/donation-point/donation-point.svg'
 
 export default function DonationPoints() {
-  const { donationPoints } = useContext(DbContext)
+  const { donationPoints } = useContext(AppContext)
   return (
     <Layout>
       <ContainerSeparator>

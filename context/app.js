@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
 
-const DbContext = createContext({
+const AppContext = createContext({
 })
 
-export default DbContext;
+export default AppContext;
 export {useContext};

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import DbContext, { useContext } from 'context/db'
+import AppContext, { useContext } from 'context/app'
 import Layout from 'components/layouts/Layout'
 import Container from 'components/layouts/Container'
 import ContainerGrid from 'components/layouts/ContainerGrid'
@@ -9,7 +9,7 @@ import ArticleCard from 'components/cards/ArticleCard'
 import articlesSvg from 'img/articles/articles.svg'
 
 export default function Articles() {
-  const { articles } = useContext(DbContext)
+  const { articles } = useContext(AppContext)
   return (
     <Layout>
       <ContainerSeparator>

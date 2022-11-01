@@ -15,7 +15,7 @@ import logoHemovida from 'img/home/logo-hemovida.jpg'
 import logoAsse from 'img/home/logo-asse.jpg'
 import logoSns from 'img/home/logo-sns.jpg'
 import ContainerGrid from 'components/layouts/ContainerGrid'
-import DbContext from 'context/db'
+import AppContext from 'context/app'
 import { useContext } from 'react'
 import ArticleCard from 'components/cards/ArticleCard'
 import RecentArticles from 'components/RecentArticles'
@@ -41,7 +41,7 @@ export default function Home() {
     setActualIndex(targetTestimonialId)
   }
 
-  const { articles } = useContext(DbContext)
+  const { articles } = useContext(AppContext)
   return (
     <Layout
       main={
