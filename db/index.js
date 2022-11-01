@@ -7,7 +7,12 @@ import programaEducativo from "img/articles/programaEducativo";
 export const articles = [
   {
     title: 'Programa educativo',
-    description: 'El Programa Educativo cuenta con la colaboración de la Asociación Uruguaya de Fútbol (AUF) que permi te, a los niños y jóvenes promotores, visitar el estadio Centenario y presenciar partidos de la selección uruguaya',
+    subtitle: 'Generaciones solidarias',
+    description: `Mucho tiempo pasó desde que iniciamos el Progra ma Educativo, tanto que los primeros alumnos que nos conocieron y ayudaron en la búsqueda de voluntarios ya son donantes. Para el Hemocentro esos jóvenes son la confirmación que los valores se siembran y a la larga dan sus frutos, Los resultados que soñamos se hicie ron realidad, acercándonos donantes voluntarios y altruistas.
+
+    Tenemos con ellos un vínculo especial, son líderes de la soli daridad, niños que querían ser donantes y que en cuanto su edad se los permitió, se acercaron al Hemocentro a hacerlo. Generamos una relación de mucho tiempo, ellos sabiendo que podían contar con nuestro centro cuando lo precisaran y no sotros sintiéndolos como los mejores aliados.
+    
+    Con 10, 11 o 12 años fueron los primeros promotores de nues tro trabajo. Junto a sus maestros estudiaron la sangre, el siste ma circulatorio, conocieron el Hemocentro, sus laboratorios, escucharon a técnicos que les contaron lo valioso que es la donación de sangre. Prepararon jornadas de donación y de la forma más creativa invitaron a sus familias y amigos. Fueron excelentes anfitriones que cuidaron y mimaron a cada donan te. Demostraron su talento y entusiasmo en canciones, juegos, danza para dar el mensaje de solidaridad. Su compromiso ha cia la vida no quedó en la escuela, creció con ellos y los acom paña hasta el día de hoy.`,
     date: '27 de octubre',
     thumbnail: defaultArticlesSvg,
     cover: programaEducativo.cover,

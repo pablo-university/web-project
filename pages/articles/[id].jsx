@@ -10,28 +10,38 @@ import Heading from 'components/layouts/Heading'
 export default function Article({
   article: {
     title,
+    subtitle,
     description,
     date,
     thumbnail: { src: thumbnailSrc },
     cover: { src: coverSrc },
+    coverExtension: { src: coverExtensionSrc },
   },
 }) {
+  // const getFirstContentOfArticle = (string)=>string.slice()
   return (
     <Layout>
       <ContainerSeparator>
         <Container>
           {title && (
-            <Heading
-              title={title}
-              description={description}
-              imageUrl={thumbnailSrc}
-            >
+            <Heading title={title} imageUrl={thumbnailSrc}>
+              <p className="line-clamp-3">{description}</p>
               <time dateTime={date}>{date}</time>
             </Heading>
           )}
         </Container>
 
-        <img src={coverSrc} alt="cover image" />
+        <img className="md:pr-20" src={coverSrc} alt="cover image" />
+
+        <Container>
+          <ContainerGrid className="md:grid-cols-2 gap-6">
+            <div className="grid gap-6 content-start">
+              <h3>{subtitle}</h3>
+              <p>{description}</p>
+            </div>
+            <img src={coverExtensionSrc} alt="cover image" />
+          </ContainerGrid>
+        </Container>
 
         <Container>
           <section className="grid gap-6 md:gap-12">
