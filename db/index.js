@@ -103,38 +103,3 @@ export const donationPoints =  [
     mapSrc:'https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6558.786666911593!2d-56.065530557793664!3d-34.72047860814268!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2suy!4v1666481798799!5m2!1ses-419!2suy'
   },
 ]
-/* export const pages = {
-  donationPoints: {
-    points: [
-      {
-        title:'Chuy',
-        place:'Rocha',
-        date:'Lunes 3/10/22',
-        hour:'08:30 a 14:30',
-        description: '(Habilitada para Licencias de Conducir) JORNADA COMPLETA',
-        mapSrc:'https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6557.188775743783!2d-56.087894!3d-34.7406171!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2suy!4v1666480283593!5m2!1ses-419!2suy'
-      },
-      {
-        title:'Rocha',
-        place:'Rocha',
-        date:'Lunes 3/10/22',
-        hour:'08:30 a 14:30',
-        description: '(Habilitada para Licencias de Conducir) JORNADA COMPLETA',
-        mapSrc:'https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6560.461523497149!2d-56.041219705195395!3d-34.699359137795476!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2suy!4v1666481830000!5m2!1ses-419!2suy'
-      },
-      {
-        title:'Florida - Plaza Asamblea',
-        place:'Florida',
-        date:'Miércoles 21/9/22',
-        hour:'08:00 a 13:30',
-        description: '(Habilitada para Licencias de Conducir) JORNADA COMPLETA',
-        mapSrc:'https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6558.786666911593!2d-56.065530557793664!3d-34.72047860814268!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2suy!4v1666481798799!5m2!1ses-419!2suy'
-      },
-    ]
-  },
-
-  articles: {
-    articles: articles
-  }
-}
- */
