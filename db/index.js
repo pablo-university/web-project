@@ -103,7 +103,7 @@ export const donationPoints =  [
     mapSrc:'https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6558.786666911593!2d-56.065530557793664!3d-34.72047860814268!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2suy!4v1666481798799!5m2!1ses-419!2suy'
   },
 ]
-export const pages = {
+/* export const pages = {
   donationPoints: {
     points: [
       {
@@ -137,3 +137,4 @@ export const pages = {
     articles: articles
   }
 }
+ */

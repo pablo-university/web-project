@@ -40,11 +40,7 @@ export default function Home() {
     setActualIndex(targetTestimonialId)
   }
 
-  const {
-    pages: {
-      articles: { articles },
-    },
-  } = useContext(DbContext)
+  const { articles } = useContext(DbContext)
   console.log(articles)
   return (
     <Layout

@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }) {
         ></link>
       </Head>
       <DbContext.Provider value={{
-        pages,
+        // pages, 
         donationPoints,
         articles
       }}>
