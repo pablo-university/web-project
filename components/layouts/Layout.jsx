@@ -16,10 +16,8 @@ export default function Layout({ children, main }) {
       }
     >
       <div className="layout grid h-screen">
-        <header className="row-[1/2] col-[1/2] z-10 md:mt-8">
-          <Container className="p-0">
-            <NavBar />
-          </Container>
+        <header className="row-[1/2] col-[1/2] z-10 md:mt-8 container p-0 m-auto sticky top-4">
+          <NavBar />
         </header>
         {!main && <main>{children}</main>}
         {main && main}

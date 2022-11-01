@@ -2,7 +2,7 @@ import Head from 'next/head'
 import '../styles/globals.css'
 import { BASE_PATH } from 'utils/index'
 import DbContext from "context/db";
-import { pages } from "db/index";
+import { pages, articles, donationPoints } from "db/index";
 
 
 function MyApp({ Component, pageProps }) {
@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
           crossOrigin="true"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;700&display=swap"
           rel="stylesheet"
         />
         <title>Hemocentro</title>
@@ -27,7 +27,9 @@ function MyApp({ Component, pageProps }) {
         ></link>
       </Head>
       <DbContext.Provider value={{
-        pages
+        // pages, 
+        donationPoints,
+        articles
       }}>
         <Component {...pageProps} />
       </DbContext.Provider>

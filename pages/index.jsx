@@ -8,16 +8,40 @@ import PrimaryButton from 'components/buttons/PrimaryButton'
 import TestimonialCard from 'components/cards/TestimonialCard'
 import RoundedSmall from 'components/buttons/RoundedSmall'
 import PrimaryOutlineButton from 'components/buttons/PrimaryOutlineButton'
-import { configs } from 'db'
+import coverMaria from 'img/cover-maria.jpg'
+import coverFranco from 'img/cover-franco.jpg'
 import hemocentroImage from 'img/home/hemocentro.jpg'
+import logoHemovida from 'img/home/logo-hemovida.jpg'
+import logoAsse from 'img/home/logo-asse.jpg'
+import logoSns from 'img/home/logo-sns.jpg'
+import ContainerGrid from 'components/layouts/ContainerGrid'
+import DbContext from 'context/db'
+import { useContext } from 'react'
+import ArticleCard from 'components/cards/ArticleCard'
 
 export default function Home() {
-  const [testimonials] = useState(configs.testimonials)
+  const [testimonials] = useState([
+    {
+      name: 'María',
+      description:
+        'Hoy han pasado 3 años desde que se vió envuelta en una situación la cuál le requirió una transfusión de sangre la cuál fué proporcionada por el Hemocentro Maldonado.',
+      image: coverMaria,
+    },
+    {
+      name: 'Franco',
+      description:
+        'Luego de sufrir un accidente se encontró bajo la necesidad de sangre, así fué como conoció el Hemocentro Maldonado, hoy se encuentra recuperada y feliz!',
+      image: coverFranco,
+    },
+  ])
   const [actualIndex, setActualIndex] = useState(0)
 
   const handleChangeHeroImage = (targetTestimonialId) => {
     setActualIndex(targetTestimonialId)
   }
+
+  const { articles } = useContext(DbContext)
+  console.log(articles)
   return (
     <Layout
       main={
@@ -145,6 +169,50 @@ export default function Home() {
                   </p>
                   <PrimaryOutlineButton>Conocer más</PrimaryOutlineButton>
                 </div>
+              </section>
+            </Container>
+
+            <Container>
+              <section className="grid gap-6 md:gap-12">
+                <h2 className="text-center">Quienes apoyan</h2>
+                <ContainerGrid className="grid-cols-1 md:grid-cols-3 justify-items-center gap-6 md:gap-12">
+                  <img
+                    src={logoAsse.src}
+                    alt="logoAsse"
+                    className="max-w-xs w-full"
+                  />
+                  <img
+                    src={logoHemovida.src}
+                    alt="logoHemovida"
+                    className="max-w-xs w-full"
+                  />
+                  <img
+                    src={logoSns.src}
+                    alt="logoSns"
+                    className="max-w-xs w-full"
+                  />
+                </ContainerGrid>
+              </section>
+            </Container>
+
+            <Container>
+              <section className="grid gap-6 md:gap-12">
+                <h2>Artículos recientes</h2>
+                <ContainerGrid className="grid-cols-1 md:grid-cols-3 justify-items-center gap-6">
+                  {articles.map(
+                    ({ title, description, date, cover: { src } }, index) =>
+                      index < 3 && (
+                        <ArticleCard
+                          key={index}
+                          title={title}
+                          date={date}
+                          imageSrc={src}
+                        >
+                          {description}
+                        </ArticleCard>
+                      )
+                  )}
+                </ContainerGrid>
               </section>
             </Container>
           </ContainerSeparator>

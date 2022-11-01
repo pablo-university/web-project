@@ -1,5 +1,5 @@
 {
-  "name": "web project ort",
+  "name": "hemocentro",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@notionhq/client": "^2.1.1",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "daisyui": "^2.31.0",
     "next": "^12.2.5",
     "react": "18.2.0",
