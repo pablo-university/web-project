@@ -2,10 +2,21 @@ import Head from 'next/head'
 import '../styles/globals.css'
 import { BASE_PATH } from 'utils/index'
 import DbContext from "context/db";
-import { pages, articles, donationPoints } from "db/index";
+import {  donationPoints } from "db/index";
+import { useState, useEffect } from "react";
+import { getArticles } from "connectors/getArticles";
 
 
 function MyApp({ Component, pageProps }) {
+  const [articles, setArticles] = useState(null);
+  useEffect( () => {
+    const init = async () => {
+      const articles = await getArticles()
+      setArticles(articles)
+    }
+    init()
+  }, [])
+  
   return (
     <>
       <Head>
