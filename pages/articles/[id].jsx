@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react'
 import Layout from 'components/layouts/Layout'
 import Container from 'components/layouts/Container'
 import ContainerSeparator from 'components/layouts/ContainerSeparator'
 import ContainerGrid from 'components/layouts/ContainerGrid'
 import ArticleCard from 'components/cards/ArticleCard'
-import { articles } from 'db'
+import { getArticles } from 'connectors/getArticles'
 import Heading from 'components/layouts/Heading'
+import Alert from 'components/Alert'
+import RecentArticles from 'components/RecentArticles'
 
 export default function Article({
   article: {
@@ -18,8 +19,8 @@ export default function Article({
     coverExtension: { src: coverExtensionSrc },
     published,
   },
+  articles,
 }) {
-  // const getFirstContentOfArticle = (string)=>string.slice()
   return (
     <Layout>
       {published ? (
@@ -46,55 +47,19 @@ export default function Article({
         </ContainerSeparator>
       ) : (
         <Container>
-          <div className="alert alert-warning shadow-lg">
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="stroke-current flex-shrink-0 h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                />
-              </svg>
-              <span>
-                Este artículo aún no ha sido publicado, lo sentimos mucho
-              </span>
-            </div>
-          </div>
-
-          <Container>
-            <section className="grid gap-6 md:gap-12">
-              <h2>Artículos recientes</h2>
-              <ContainerGrid className="grid-cols-1 md:grid-cols-3 justify-items-center gap-6">
-                {articles.map(
-                  ({ title, description, date, cover: { src } }, index) =>
-                    index < 3 && (
-                      <ArticleCard
-                        key={index}
-                        title={title}
-                        date={date}
-                        imageSrc={src}
-                      >
-                        {description}
-                      </ArticleCard>
-                    )
-                )}
-              </ContainerGrid>
-            </section>
-          </Container>
+          <Alert className={'alert-warning'}>
+            Este artículo aún no ha sido publicado, lo sentimos mucho
+          </Alert>
         </Container>
       )}
+      {articles.length > 3 && <RecentArticles {...{ articles }} />}
     </Layout>
   )
 }
 
 // Generates `/posts/1` and `/posts/2`
 export async function getStaticPaths() {
+  const articles = await getArticles()
   const paths = articles.map((article, index) => {
     return {
       params: {
@@ -110,10 +75,10 @@ export async function getStaticPaths() {
 
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps({ params: { id } }) {
+  const articles = await getArticles()
   const article = articles[id]
-  console.log(article)
   return {
     // Passed to the page component as props
-    props: { article },
+    props: { article, articles },
   }
 }
