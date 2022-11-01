@@ -9,11 +9,7 @@ import ArticleCard from 'components/cards/ArticleCard'
 import articlesSvg from 'img/articles/articles.svg'
 
 export default function Articles() {
-  const {
-    pages: {
-      articles: { articles },
-    },
-  } = useContext(DbContext)
+  const { articles } = useContext(DbContext)
   return (
     <Layout>
       <ContainerSeparator>

@@ -11,11 +11,7 @@ import ContainerGrid from 'components/layouts/ContainerGrid'
 import donationPointSvg from 'img/donation-point/donation-point.svg'
 
 export default function DonationPoints() {
-  const {
-    pages: {
-      donationPoints: { points },
-    },
-  } = useContext(DbContext)
+  const { donationPoints } = useContext(DbContext)
   return (
     <Layout>
       <ContainerSeparator>
@@ -33,7 +29,7 @@ export default function DonationPoints() {
             </ContainerGrid>
           </Heading>
         </Container>
-        {points.map(
+        {donationPoints.map(
           ({ title, place, date, hour, description, mapSrc }, index) => (
             <Container key={index}>
               <DonationPoint
