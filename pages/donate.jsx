@@ -9,6 +9,7 @@ import ContainerSeparator from 'components/layouts/ContainerSeparator'
 import PrimaryButton from 'components/buttons/PrimaryButton'
 import Input from 'components/form/Input'
 import ReservationDates from 'components/pages/donate/ReservationDates'
+import PersonalDates from 'components/pages/donate/PersonalDates'
 
 export default function Donate() {
   const appContext = useContext(AppContext)
@@ -31,7 +32,10 @@ export default function Donate() {
         </Container>
         <Container>
           <ContainerGrid className="md:grid-cols-2 gap-6">
-            <ReservationDates></ReservationDates>
+            {/* WORKING */}
+            {/* <ReservationDates></ReservationDates> */}
+            <PersonalDates></PersonalDates>
+            {/* --- */}
             <div className="grid gap-6">
               <h3>Tener en cuenta</h3>
               <ul>
