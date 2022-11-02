@@ -7,4 +7,5 @@ ul.steps .step::after {
     height: 2em;
     font-size: 2em;
     font-weight: 600;
+    color: white;
 }
