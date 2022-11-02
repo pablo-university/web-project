@@ -4,7 +4,7 @@ import Heading from 'components/layouts/Heading'
 import reservationImg from 'img/reservation/reservation.svg'
 import ContainerGrid from 'components/layouts/ContainerGrid'
 import PrimaryButton from 'components/buttons/PrimaryButton'
-import TextInput from 'components/form/TextInput'
+import Input from 'components/form/Input'
 
 export default function Donate() {
   return (
@@ -26,11 +26,11 @@ export default function Donate() {
             <h3>Datos de la reserva</h3>
             <ContainerGrid className="lg:grid-cols-2 lg:gap-6">
               <div>
-                <TextInput label="Localidad" />
-                <TextInput label="Motivo" />
+                <Input label="Localidad" />
+                <Input label="Motivo" />
               </div>
               <div>
-                <TextInput label="Fecha" />
+                <Input label="Fecha" />
               </div>
             </ContainerGrid>
             <PrimaryButton>Siguiente</PrimaryButton>
