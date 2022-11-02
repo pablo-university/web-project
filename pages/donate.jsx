@@ -10,18 +10,18 @@ import Input from 'components/form/Input'
 export default function Donate() {
   return (
     <Layout>
-      <Container>
-        <Heading
-          title={'donate'}
-          description={
-            'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!'
-          }
-          imageUrl={reservationImg.src}
-        >
-          --mas contenido
-        </Heading>
-      </Container>
       <ContainerSeparator>
+        <Container>
+          <Heading
+            title={'donate'}
+            description={
+              'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!'
+            }
+            imageUrl={reservationImg.src}
+          >
+            --mas contenido
+          </Heading>
+        </Container>
         <Container>
           <ContainerGrid className="md:grid-cols-2 gap-6">
             <div>
