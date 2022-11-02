@@ -3,6 +3,8 @@ export default function TextInput({
   feedback = '',
   className = '',
   onChange,
+  placeholder = 'type here',
+  type = 'text',
   value,
 }) {
   return (
@@ -11,8 +13,8 @@ export default function TextInput({
         <span className="label-text">{label}</span>
       </label>
       <input
-        type="text"
-        placeholder="Type here"
+        type={type}
+        placeholder={placeholder}
         className={`input input-bordered w-full max-w-xs ${className}`}
         value={value}
         onChange={onChange}
