@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('styles/steps.css');
+
 
 @layer base {
     :root {
