@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Layout from 'components/layouts/Layout'
 import Container from 'components/layouts/Container'
 import Heading from 'components/layouts/Heading'
@@ -6,21 +7,24 @@ import ContainerGrid from 'components/layouts/ContainerGrid'
 import ContainerSeparator from 'components/layouts/ContainerSeparator'
 import PrimaryButton from 'components/buttons/PrimaryButton'
 import Input from 'components/form/Input'
+import AppContext, { useContext } from 'context/app'
 
 export default function Donate() {
+  const appContext = useContext(AppContext)
+
+  // to work with form
+  appContext.donate = { form: {} }
   return (
     <Layout>
       <ContainerSeparator>
         <Container>
           <Heading
-            title={'donate'}
+            title={'Reserva de turno'}
             description={
-              'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!'
+              'Los horarios habilitados son aquellos que se ven en negro. Si el día o horario que quiere reservar no está activo, significa que están completos.'
             }
             imageUrl={reservationImg.src}
-          >
-            --mas contenido
-          </Heading>
+          ></Heading>
         </Container>
         <Container>
           <ContainerGrid className="md:grid-cols-2 gap-6">

@@ -4,4 +4,4 @@ const AppContext = createContext({
 })
 
 export default AppContext;
-export {useContext};
+export {useContext, AppContext};
