@@ -12,12 +12,42 @@ import ReservationDates from 'components/pages/donate/ReservationDates'
 import PersonalDates from 'components/pages/donate/PersonalDates'
 
 export default function Donate() {
+  // trabajarlo en contexto si es necesario
   const appContext = useContext(AppContext)
-  const [formActiveIndex, setFormActiveIndex] = useState(0)
-  // const [first, setfirst] = useState(second)
+  appContext.donate = {
+    steps: [
+      {
+        component: (props) => <ReservationDates {...{ props }} />,
+        validated: false,
+      },
+      {
+        component: (props) => <PersonalDates {...{ props }} />,
+        validated: false,
+      },
+    ],
+  }
+  // -------------------------------
+  const [stepActiveIndex, setStepActiveIndex] = useState(0)
+  const [steps, setSteps] = useState(appContext.donate.steps)
+  const handleClickNext = () => {
+    /**
+     * chequea si las secciones están validadas
+     * si ok, entonces:
+     * chequea no ser el final
+     * si no es el final avanza
+     * si es el final, cambia de pagina
+     */
+  }
+  const handleClickBack = () => {
+    /**
+     * chequea no ser la final
+     * si no es la final retrocede un paso
+     */
+  }
+  console.log(steps)
 
-  // to work with form
-  appContext.donate = { form: {} }
+  // const RenderJSX = (object) => <>{object}</>
+  // console.log(appContext)
   return (
     <Layout>
       <ContainerSeparator>
@@ -32,10 +62,20 @@ export default function Donate() {
         </Container>
         <Container>
           <ContainerGrid className="md:grid-cols-2 gap-6">
-            {/* WORKING */}
-            {/* <ReservationDates></ReservationDates> */}
-            {/* <PersonalDates></PersonalDates> */}
-            {/* --- */}
+            <div>
+              here
+              {/* WORKING */}
+              {/* <ReservationDates></ReservationDates> */}
+              {/* <PersonalDates></PersonalDates> */}
+              {appContext.donate.steps.map(
+                ({ component: Component }, index) => (
+                  <Component key={index} index={index}></Component>
+                )
+              )}
+              {/* --- */}
+              <PrimaryButton onClick={handleClickNext}>Siguiente</PrimaryButton>
+            </div>
+
             <div className="grid gap-6">
               <h3>Tener en cuenta</h3>
               <ul>

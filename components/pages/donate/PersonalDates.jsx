@@ -3,7 +3,7 @@ import PrimaryButton from 'components/buttons/PrimaryButton'
 import Input from 'components/form/Input'
 import Select from 'components/form/Select'
 
-export default function ReservationDates() {
+export default function ReservationDates(props) {
   return (
     <div>
       <h3>Datos Personales</h3>
@@ -54,7 +54,6 @@ export default function ReservationDates() {
           </Select>
         </div>
       </ContainerGrid>
-      <PrimaryButton>Siguiente</PrimaryButton>
     </div>
   )
 }
