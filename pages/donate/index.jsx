@@ -10,7 +10,6 @@ import PrimaryButton from 'components/buttons/PrimaryButton'
 import Input from 'components/form/Input'
 import ReservationDates from 'components/pages/donate/ReservationDates'
 import PersonalDates from 'components/pages/donate/PersonalDates'
-import Succesfull from 'components/pages/donate/Succesfull'
 
 export default function Donate() {
   const appContext = useContext(AppContext)
@@ -36,7 +35,6 @@ export default function Donate() {
             {/* WORKING */}
             {/* <ReservationDates></ReservationDates> */}
             {/* <PersonalDates></PersonalDates> */}
-            <Succesfull />
             {/* --- */}
             <div className="grid gap-6">
               <h3>Tener en cuenta</h3>
