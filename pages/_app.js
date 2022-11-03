@@ -8,11 +8,15 @@ import { getArticles } from "connectors/getArticles";
 
 
 function MyApp({ Component, pageProps }) {
-  const [articles, setArticles] = useState(null);
+  const [contextState, setContextState] = useState();
   useEffect( () => {
     const init = async () => {
       const articles = await getArticles()
-      setArticles(articles)
+      setContextState({
+        ...contextState,
+        donationPoints,
+        articles
+      })
     }
     init()
   }, [])
@@ -37,11 +41,7 @@ function MyApp({ Component, pageProps }) {
           href={`${BASE_PATH}/favicon_io/favicon.ico`}
         ></link>
       </Head>
-      <AppContext.Provider value={{
-        // pages, 
-        donationPoints,
-        articles
-      }}>
+      <AppContext.Provider value={contextState}>
         <Component {...pageProps} />
       </AppContext.Provider>
     </>

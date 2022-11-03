@@ -1,11 +1,15 @@
 import Link from 'next/link'
 import ContainerGrid from 'components/layouts/ContainerGrid'
+import PrimaryOutlineButton from 'components/buttons/PrimaryOutlineButton'
 import PrimaryButton from 'components/buttons/PrimaryButton'
 import Input from 'components/form/Input'
 import Wrapper from 'components/pages/donate/Wrapper'
 import Select from 'components/form/Select'
+import { useContext, AppContext } from 'context/app'
 
 export default function ReservationDates() {
+  /* const appContext = useContext(AppContext)
+  appContext.donate.currentStepActive = 1 */
   return (
     <Wrapper>
       <div>
@@ -58,11 +62,18 @@ export default function ReservationDates() {
           </div>
         </ContainerGrid>
       </div>
-      <Link href="/donate/successfull">
-        <a>
-          <PrimaryButton>Siguiente</PrimaryButton>
-        </a>
-      </Link>
+      <div className="grid grid-cols-2">
+        <Link href="/donate/">
+          <a>
+            <PrimaryOutlineButton>Siguiente</PrimaryOutlineButton>
+          </a>
+        </Link>
+        <Link href="/donate/successfull">
+          <a>
+            <PrimaryButton>Siguiente</PrimaryButton>
+          </a>
+        </Link>
+      </div>
     </Wrapper>
   )
 }
