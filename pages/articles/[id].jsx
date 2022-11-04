@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react'
 import Layout from 'components/layouts/Layout'
 import Container from 'components/layouts/Container'
 import ContainerSeparator from 'components/layouts/ContainerSeparator'
 import ContainerGrid from 'components/layouts/ContainerGrid'
 import ArticleCard from 'components/cards/ArticleCard'
-import { articles } from 'db'
+import { getArticles } from 'connectors/getArticles'
 import Heading from 'components/layouts/Heading'
+import Alert from 'components/Alert'
+import RecentArticles from 'components/RecentArticles'
 
 export default function Article({
   article: {
@@ -16,60 +17,49 @@ export default function Article({
     thumbnail: { src: thumbnailSrc },
     cover: { src: coverSrc },
     coverExtension: { src: coverExtensionSrc },
+    published,
   },
+  articles,
 }) {
-  // const getFirstContentOfArticle = (string)=>string.slice()
   return (
     <Layout>
-      <ContainerSeparator>
-        <Container>
-          {title && (
-            <Heading title={title} imageUrl={thumbnailSrc}>
-              <p className="line-clamp-3">{description}</p>
-              <time dateTime={date}>{date}</time>
-            </Heading>
-          )}
-        </Container>
+      {published ? (
+        <ContainerSeparator>
+          <Container>
+            {title && (
+              <Heading title={title} imageUrl={thumbnailSrc}>
+                <p className="line-clamp-3">{description}</p>
+                <time dateTime={date}>{date}</time>
+              </Heading>
+            )}
+          </Container>
+          <img className="md:pr-20" src={coverSrc} alt="cover image" />
 
-        <img className="md:pr-20" src={coverSrc} alt="cover image" />
-
-        <Container>
-          <ContainerGrid className="md:grid-cols-2 gap-6">
-            <div className="grid gap-6 content-start">
-              <h3>{subtitle}</h3>
-              <p>{description}</p>
-            </div>
-            <img src={coverExtensionSrc} alt="cover image" />
-          </ContainerGrid>
-        </Container>
-
-        <Container>
-          <section className="grid gap-6 md:gap-12">
-            <h2>Artículos recientes</h2>
-            <ContainerGrid className="grid-cols-1 md:grid-cols-3 justify-items-center gap-6">
-              {articles.map(
-                ({ title, description, date, cover: { src } }, index) =>
-                  index < 3 && (
-                    <ArticleCard
-                      key={index}
-                      title={title}
-                      date={date}
-                      imageSrc={src}
-                    >
-                      {description}
-                    </ArticleCard>
-                  )
-              )}
+          <Container>
+            <ContainerGrid className="md:grid-cols-2 gap-6">
+              <div className="grid gap-6 content-start">
+                <h3>{subtitle}</h3>
+                <p>{description}</p>
+              </div>
+              <img src={coverExtensionSrc} alt="cover image" />
             </ContainerGrid>
-          </section>
+          </Container>
+        </ContainerSeparator>
+      ) : (
+        <Container>
+          <Alert className={'alert-warning'}>
+            Este artículo aún no ha sido publicado, lo sentimos mucho
+          </Alert>
         </Container>
-      </ContainerSeparator>
+      )}
+      {articles.length > 3 && <RecentArticles {...{ articles }} />}
     </Layout>
   )
 }
 
 // Generates `/posts/1` and `/posts/2`
 export async function getStaticPaths() {
+  const articles = await getArticles()
   const paths = articles.map((article, index) => {
     return {
       params: {
@@ -85,10 +75,10 @@ export async function getStaticPaths() {
 
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps({ params: { id } }) {
+  const articles = await getArticles()
   const article = articles[id]
-  console.log(article)
   return {
     // Passed to the page component as props
-    props: { article },
+    props: { article, articles },
   }
 }

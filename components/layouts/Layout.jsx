@@ -15,7 +15,7 @@ export default function Layout({ children, main }) {
         ></Menu>
       }
     >
-      <div className="layout grid h-screen">
+      <div className="layout grid min-h-screen">
         <header className="row-[1/2] col-[1/2] z-10 md:mt-8 container p-0 m-auto sticky top-4">
           <NavBar />
         </header>

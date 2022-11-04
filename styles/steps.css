@@ -1,0 +1,11 @@
+ul.steps .step {
+    grid-template-rows: auto;
+}
+
+ul.steps .step::after {
+    width: 2em;
+    height: 2em;
+    font-size: 2em;
+    font-weight: 600;
+    color: white;
+}

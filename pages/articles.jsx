@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import DbContext, { useContext } from 'context/db'
+import AppContext, { useContext } from 'context/app'
 import Layout from 'components/layouts/Layout'
 import Container from 'components/layouts/Container'
 import ContainerGrid from 'components/layouts/ContainerGrid'
@@ -9,7 +9,7 @@ import ArticleCard from 'components/cards/ArticleCard'
 import articlesSvg from 'img/articles/articles.svg'
 
 export default function Articles() {
-  const { articles } = useContext(DbContext)
+  const { articles } = useContext(AppContext)
   return (
     <Layout>
       <ContainerSeparator>
@@ -26,17 +26,18 @@ export default function Articles() {
         </Container>
         <Container>
           <ContainerGrid className="grid-cols-1 md:grid-cols-3 xl:grid-cols-4 justify-items-center gap-4">
-            {articles.map(
-              ({ title, description, date, cover: { src } }, index) => (
-                <Link key={index} href={`/articles/${index}`}>
-                  <a>
-                    <ArticleCard title={title} date={date} imageSrc={src}>
-                      {description}
-                    </ArticleCard>
-                  </a>
-                </Link>
-              )
-            )}
+            {articles &&
+              articles.map(
+                ({ title, description, date, cover: { src } }, index) => (
+                  <Link key={index} href={`/articles/${index}`}>
+                    <a className="grid">
+                      <ArticleCard title={title} date={date} imageSrc={src}>
+                        {description}
+                      </ArticleCard>
+                    </a>
+                  </Link>
+                )
+              )}
           </ContainerGrid>
         </Container>
       </ContainerSeparator>

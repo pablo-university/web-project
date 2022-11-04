@@ -5,7 +5,7 @@ import Menu from 'components/NavBar/Menu'
 
 export default function index() {
   return (
-    <nav className="navbar bg-base-100 [ shadow md:rounded-2xl md:px-8 ]">
+    <nav className="navbar bg-base-100/80 [ shadow md:rounded-2xl md:px-8 backdrop-blur-sm ]">
       <div className="flex-1">
         <Link href="/">
           <a>

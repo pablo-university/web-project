@@ -16,7 +16,8 @@ export const articles = [
     date: '27 de octubre',
     thumbnail: defaultArticlesSvg,
     cover: programaEducativo.cover,
-    coverExtension: programaEducativo.coverExtension
+    coverExtension: programaEducativo.coverExtension,
+    published: true,
   },
   {
     title: 'Compromiso social',

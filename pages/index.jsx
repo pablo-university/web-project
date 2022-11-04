@@ -15,9 +15,10 @@ import logoHemovida from 'img/home/logo-hemovida.jpg'
 import logoAsse from 'img/home/logo-asse.jpg'
 import logoSns from 'img/home/logo-sns.jpg'
 import ContainerGrid from 'components/layouts/ContainerGrid'
-import DbContext from 'context/db'
+import AppContext from 'context/app'
 import { useContext } from 'react'
 import ArticleCard from 'components/cards/ArticleCard'
+import RecentArticles from 'components/RecentArticles'
 
 export default function Home() {
   const [testimonials] = useState([
@@ -40,8 +41,7 @@ export default function Home() {
     setActualIndex(targetTestimonialId)
   }
 
-  const { articles } = useContext(DbContext)
-  console.log(articles)
+  const { articles } = useContext(AppContext)
   return (
     <Layout
       main={
@@ -196,24 +196,7 @@ export default function Home() {
             </Container>
 
             <Container>
-              <section className="grid gap-6 md:gap-12">
-                <h2>Artículos recientes</h2>
-                <ContainerGrid className="grid-cols-1 md:grid-cols-3 justify-items-center gap-6">
-                  {articles.map(
-                    ({ title, description, date, cover: { src } }, index) =>
-                      index < 3 && (
-                        <ArticleCard
-                          key={index}
-                          title={title}
-                          date={date}
-                          imageSrc={src}
-                        >
-                          {description}
-                        </ArticleCard>
-                      )
-                  )}
-                </ContainerGrid>
-              </section>
+              <RecentArticles {...{ articles }} />
             </Container>
           </ContainerSeparator>
         </main>
