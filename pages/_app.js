@@ -8,14 +8,25 @@ import { getArticles } from "connectors/getArticles";
 
 
 function MyApp({ Component, pageProps }) {
-  const [contextState, setContextState] = useState();
+  // initialization of state context
+  const [contextState, setContextState] = useState({
+       donationPoints,
+       donate: {
+        stepActive: 0
+      }
+  });
+  // --------------------
+
+
+  // --- Get articles --- 
   useEffect( () => {
     const init = async () => {
       const articles = await getArticles()
       setContextState({
         ...contextState,
-        donationPoints,
-        articles
+        contextState,
+        setContextState,
+        articles,
       })
     }
     init()

@@ -65,7 +65,7 @@ export default function ReservationDates() {
       <div className="grid grid-cols-2">
         <Link href="/donate/">
           <a>
-            <PrimaryOutlineButton>Siguiente</PrimaryOutlineButton>
+            <PrimaryOutlineButton>Atrás</PrimaryOutlineButton>
           </a>
         </Link>
         <Link href="/donate/successfull">

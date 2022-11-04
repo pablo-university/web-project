@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 import ContainerGrid from 'components/layouts/ContainerGrid'
 import PrimaryButton from 'components/buttons/PrimaryButton'
 import Input from 'components/form/Input'
@@ -7,19 +8,31 @@ import Wrapper from 'components/pages/donate/Wrapper'
 import { useContext, AppContext } from 'context/app'
 
 export default function ReservationDates() {
+  const router = useRouter()
   const appContext = useContext(AppContext)
 
   useEffect(() => {
-    console.log(appContext)
-  }, [appContext])
+    appContext.setContextState({
+      ...appContext,
+      donate: {
+        stepActive: 0,
+      },
+    })
+  }, [])
 
-  // appContext.donate.currentStepActive = 0
-  // appContext.donate.currentStepActive = 0
-  /* appContext = {
-    donate: {
-      currentStepActive: 0,
-    },
-  } */
+  const handleClickNextStep = () => {
+    /**
+     * si es valido asigno nuevo contexto de step
+     * redirigir
+     */
+    appContext.setContextState({
+      ...appContext,
+      donate: {
+        stepActive: 1,
+      },
+    })
+    router.push('/donate/personalDates')
+  }
   return (
     <Wrapper>
       <div>
@@ -33,11 +46,11 @@ export default function ReservationDates() {
             <Input label="Fecha" type="date" />
           </div>
         </ContainerGrid>
-        <Link href="/donate/personalDates">
-          <a>
-            <PrimaryButton>Siguiente</PrimaryButton>
-          </a>
-        </Link>
+        {/*  <Link href="/donate/personalDates">
+          <a> */}
+        <PrimaryButton onClick={handleClickNextStep}>Siguiente</PrimaryButton>
+        {/*  </a>
+        </Link> */}
       </div>
     </Wrapper>
   )

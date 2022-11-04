@@ -1,11 +1,19 @@
+import { useEffect, useState } from 'react'
 import Layout from 'components/layouts/Layout'
 import Container from 'components/layouts/Container'
 import Heading from 'components/layouts/Heading'
 import reservationImg from 'img/reservation/reservation.svg'
 import ContainerGrid from 'components/layouts/ContainerGrid'
 import ContainerSeparator from 'components/layouts/ContainerSeparator'
+import { useContext, AppContext } from 'context/app'
 
 export default function Donate({ children }) {
+  const [stepActive, setStepActive] = useState(null)
+
+  const appContext = useContext(AppContext)
+  useEffect(() => {
+    setStepActive(appContext.donate.stepActive)
+  }, [appContext])
   return (
     <Layout>
       <ContainerSeparator>
@@ -38,7 +46,9 @@ export default function Donate({ children }) {
               </ul>
               <ul className="steps ">
                 <li className="step step-primary">Datos de la reserva</li>
-                <li className="step">Datos personales</li>
+                <li className={`step ${stepActive ? 'step-primary' : ''}`}>
+                  Datos personales
+                </li>
               </ul>
             </div>
           </ContainerGrid>
