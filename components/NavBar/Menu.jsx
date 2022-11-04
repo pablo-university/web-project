@@ -37,7 +37,7 @@ export default function Menu({ className, style }) {
             </Link>
           </li>
           <li>
-            <a>Submenu 2</a>
+            <a>A quién ayudo</a>
           </li>
         </ul>
       </li>

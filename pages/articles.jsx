@@ -26,17 +26,18 @@ export default function Articles() {
         </Container>
         <Container>
           <ContainerGrid className="grid-cols-1 md:grid-cols-3 xl:grid-cols-4 justify-items-center gap-4">
-            {articles.map(
-              ({ title, description, date, cover: { src } }, index) => (
-                <Link key={index} href={`/articles/${index}`}>
-                  <a>
-                    <ArticleCard title={title} date={date} imageSrc={src}>
-                      {description}
-                    </ArticleCard>
-                  </a>
-                </Link>
-              )
-            )}
+            {articles &&
+              articles.map(
+                ({ title, description, date, cover: { src } }, index) => (
+                  <Link key={index} href={`/articles/${index}`}>
+                    <a className="grid">
+                      <ArticleCard title={title} date={date} imageSrc={src}>
+                        {description}
+                      </ArticleCard>
+                    </a>
+                  </Link>
+                )
+              )}
           </ContainerGrid>
         </Container>
       </ContainerSeparator>

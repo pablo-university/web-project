@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import ContainerGrid from 'components/layouts/ContainerGrid'
 import PrimaryOutlineButton from 'components/buttons/PrimaryOutlineButton'
 import PrimaryButton from 'components/buttons/PrimaryButton'
@@ -8,8 +9,14 @@ import Select from 'components/form/Select'
 import { useContext, AppContext } from 'context/app'
 
 export default function ReservationDates() {
-  /* const appContext = useContext(AppContext)
-  appContext.donate.currentStepActive = 1 */
+  const router = useRouter()
+  const handleClickNext = () => {
+    /**
+     * si es valido asigno nuevo contexto de step
+     * redirigir
+     */
+    router.push('/donate/successfull')
+  }
   return (
     <Wrapper>
       <div>
@@ -68,11 +75,7 @@ export default function ReservationDates() {
             <PrimaryOutlineButton>Atrás</PrimaryOutlineButton>
           </a>
         </Link>
-        <Link href="/donate/successfull">
-          <a>
-            <PrimaryButton>Siguiente</PrimaryButton>
-          </a>
-        </Link>
+        <PrimaryButton onClick={handleClickNext}>Siguiente</PrimaryButton>
       </div>
     </Wrapper>
   )

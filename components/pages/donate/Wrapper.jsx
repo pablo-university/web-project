@@ -12,7 +12,7 @@ export default function Donate({ children }) {
 
   const appContext = useContext(AppContext)
   useEffect(() => {
-    setStepActive(appContext.donate.stepActive)
+    setStepActive(appContext?.donate?.stepActive)
   }, [appContext])
   return (
     <Layout>

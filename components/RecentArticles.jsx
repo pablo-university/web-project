@@ -15,7 +15,7 @@ export default function RecentArticles({ articles }) {
                 ({ title, description, date, cover: { src } }, index) =>
                   index < 3 && (
                     <Link key={index} href={`/articles/${index}`}>
-                      <a>
+                      <a className="grid">
                         <ArticleCard title={title} date={date} imageSrc={src}>
                           {description}
                         </ArticleCard>
