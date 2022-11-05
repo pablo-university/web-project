@@ -10,6 +10,18 @@ import { useContext, AppContext } from 'context/app'
 
 export default function ReservationDates() {
   const router = useRouter()
+  const appContext = useContext(AppContext)
+
+  const handleClickBack = () => {
+    appContext.setContextState({
+      ...appContext,
+      donate: {
+        stepActive: 0,
+      },
+    })
+    router.push('/donate/')
+  }
+
   const handleClickNext = () => {
     /**
      * si es valido asigno nuevo contexto de step
@@ -72,7 +84,9 @@ export default function ReservationDates() {
       <div className="grid grid-cols-2">
         <Link href="/donate/">
           <a>
-            <PrimaryOutlineButton>Atrás</PrimaryOutlineButton>
+            <PrimaryOutlineButton onClick={handleClickBack}>
+              Atrás
+            </PrimaryOutlineButton>
           </a>
         </Link>
         <PrimaryButton onClick={handleClickNext}>Siguiente</PrimaryButton>
