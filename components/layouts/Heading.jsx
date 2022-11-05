@@ -10,7 +10,7 @@ export default function Heading({
 }) {
   return (
     <ContainerGrid className={`md:grid-cols-2 ${className}`}>
-      <div className="grid align">
+      <div className="grid content-start gap-4">
         <h2>{title}</h2>
         <p>{description}</p>
         {children}

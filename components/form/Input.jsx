@@ -17,7 +17,7 @@ export default function TextInput({
         placeholder={placeholder}
         className={`input input-bordered w-full max-w-xs ${className}`}
         value={value}
-        onChange={onChange}
+        onChange={(event) => onChange(event)}
       />
       <label className="label justify-end">
         <span className="label-text-alt">{feedback}</span>

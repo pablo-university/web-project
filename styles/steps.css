@@ -2,10 +2,14 @@ ul.steps .step {
     grid-template-rows: auto;
 }
 
+ul.steps .step::before {
+    height: 1em;
+}
+
 ul.steps .step::after {
     width: 2em;
     height: 2em;
-    font-size: 2em;
+    font-size: 3em;
     font-weight: 600;
     color: white;
 }
