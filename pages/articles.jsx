@@ -15,9 +15,9 @@ export default function Articles() {
       <ContainerSeparator>
         <Container>
           <Heading
-            title={'articles'}
+            title={'Artículos'}
             description={
-              'Recurda que siempre que necesites más información o haya algo que no puedas encontrar, puedes ponerte inmediatamente en contacto con nosotos!'
+              'En esta sección puedes buscar contenido relevante y conocer las últimas novedades. Mantente al tanto sobre las últimas actualizaciones del Hemocentro!'
             }
             imageUrl={articlesSvg.src}
           >

@@ -35,7 +35,7 @@ export default function Layout({ children, main }) {
             <a className="link link-hover">Trabajar</a>
           </div>
         </footer>
-        <footer className="footer px-10 py-4 border-t border-base-300 [ bg-neutral text-white ]">
+        <footer className="footer px-10 py-4 border-t border-base-300 [ bg-neutral text-white items-center ]">
           <div>
             <p>Todos los derechos reservados 2023 Uruguay</p>
           </div>
