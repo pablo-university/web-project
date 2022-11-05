@@ -31,6 +31,7 @@ export default function DonationPoints() {
               onClick={handleClickFilter}
               label="Filtrar puntos de donación"
               buttonText="Filtrar Lugares"
+              placeholder="rivera"
             />
           </Heading>
         </Container>

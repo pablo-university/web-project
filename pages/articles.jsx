@@ -7,9 +7,16 @@ import ContainerSeparator from 'components/layouts/ContainerSeparator'
 import Heading from 'components/layouts/Heading'
 import ArticleCard from 'components/cards/ArticleCard'
 import articlesSvg from 'img/articles/articles.svg'
+import FilterInput from 'components/FilterInput'
 
 export default function Articles() {
   const { articles } = useContext(AppContext)
+
+  const handleClickFilter = (event) => {
+    /**
+     * TODO filtrar lugares
+     */
+  }
   return (
     <Layout>
       <ContainerSeparator>
@@ -21,7 +28,12 @@ export default function Articles() {
             }
             imageUrl={articlesSvg.src}
           >
-            --mas contenido
+            <FilterInput
+              onClick={handleClickFilter}
+              label="Filtrar por artículos"
+              buttonText="Filtrar Artículo"
+              placeholder="hemobus"
+            />
           </Heading>
         </Container>
         <Container>
