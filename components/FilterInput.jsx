@@ -13,7 +13,7 @@ export default function FilterInput({
     setEvent(event)
   }
   return (
-    <ContainerGrid className="items-center lg:gap-6 md:grid-cols-2">
+    <ContainerGrid className="items-center lg:gap-6 lg:grid-cols-[20em_1fr]">
       <Input
         label={label}
         value={event.target.value}
