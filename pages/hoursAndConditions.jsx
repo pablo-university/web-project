@@ -28,7 +28,7 @@ export default function HoursAndConditios() {
           </div>
         </Heading>
       </Container>
-      <Container>
+      <Container className="grid gap-6 lg:grid-cols-2">
         <ConditionCard
           title="Tener la Cédula de Identidad vigente y en buen estado."
           src={img0.src}
@@ -37,6 +37,7 @@ export default function HoursAndConditios() {
         <ConditionCard
           title="Tener un ayuno de sólidos de no más de 4 horas. No haber consumido leche y/o lácteos. Recomendamos que tomes muchos líquido (mate, café, té, refrescos y jugos azucarados)."
           src={img2.src}
+          className="lg:col-span-2"
         />
         <ConditionCard title="Pesar más de 50 kg." src={img3.src} />
         <ConditionCard title="Tener buen estado de salud." src={img4.src} />
