@@ -10,6 +10,12 @@ import FilterInput from 'components/FilterInput'
 
 export default function DonationPoints() {
   const { donationPoints } = useContext(AppContext)
+
+  const handleClickFilter = (event) => {
+    /**
+     * TODO filtrar lugares
+     */
+  }
   return (
     <Layout>
       <ContainerSeparator>
@@ -21,7 +27,11 @@ export default function DonationPoints() {
             }
             imageUrl={donationPointSvg.src}
           >
-            <FilterInput />
+            <FilterInput
+              onClick={handleClickFilter}
+              label="Filtrar puntos de donación"
+              buttonText="Filtrar Lugares"
+            />
           </Heading>
         </Container>
         {donationPoints.map(
