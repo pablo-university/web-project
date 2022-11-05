@@ -10,20 +10,12 @@ export default function ReservationDates() {
   const router = useRouter()
   const appContext = useContext(AppContext)
 
-  useEffect(() => {
-    appContext.setContextState({
-      ...appContext,
-      donate: {
-        stepActive: 0,
-      },
-    })
-  }, [])
-
   const handleClickNextStep = () => {
     /**
      * si es valido asigno nuevo contexto de step
      * redirigir
      */
+    console.log(appContext)
     appContext.setContextState({
       ...appContext,
       donate: {

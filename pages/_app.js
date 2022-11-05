@@ -13,10 +13,8 @@ function MyApp({ Component, pageProps }) {
        donationPoints,
        donate: {
         stepActive: 0
-      }
+      },
   });
-  // --------------------
-
 
   // --- Get articles --- 
   useEffect( () => {
@@ -24,7 +22,6 @@ function MyApp({ Component, pageProps }) {
       const articles = await getArticles()
       setContextState({
         ...contextState,
-        contextState,
         setContextState,
         articles,
       })
