@@ -1,10 +1,30 @@
+import { useEffect } from 'react'
 import Head from 'next/head'
+import Router from 'next/router'
 import '../styles/globals.css'
 import { BASE_PATH } from 'utils/index'
-import AppContextProvider from "context/AppContextProvider";
-
+import AppContextProvider from 'context/AppContextProvider'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 function MyApp({ Component, pageProps }) {
+  /* ... */
+  useEffect(() => {
+    const handleRouteStart = () => NProgress.start()
+    const handleRouteDone = () => NProgress.done()
+
+    Router.events.on('routeChangeStart', handleRouteStart)
+    Router.events.on('routeChangeComplete', handleRouteDone)
+    Router.events.on('routeChangeError', handleRouteDone)
+
+    return () => {
+      // Make sure to remove the event handler on unmount!
+      Router.events.off('routeChangeStart', handleRouteStart)
+      Router.events.off('routeChangeComplete', handleRouteDone)
+      Router.events.off('routeChangeError', handleRouteDone)
+    }
+  }, [])
+  /* ... */
   return (
     <>
       <Head>
