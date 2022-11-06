@@ -4,25 +4,28 @@ import { useState, useEffect } from 'react'
 import { getArticles } from 'connectors/getArticles'
 
 export default function AppContextProvider({ children }) {
+  const setContextState = (value) => {
+    setContext(value)
+  }
+
   // initialization of state context
-  const [contextState, setContextState] = useState({
+  const [contextState, setContext] = useState({
     donationPoints,
     donate: {
       stepActive: 0,
+      setContextState,
     },
   })
 
   /**
-   * get articles
+   * get articles from client
    * set articles on app context
-   * set setContext
-   * */
+   */
   useEffect(() => {
     const init = async () => {
       const articles = await getArticles()
       setContextState({
         ...contextState,
-        setContextState,
         articles,
       })
     }
