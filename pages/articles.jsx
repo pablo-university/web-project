@@ -10,14 +10,14 @@ import ArticleCard from 'components/cards/ArticleCard'
 import articlesSvg from 'img/articles/articles.svg'
 import FilterInput from 'components/FilterInput'
 import Alert from 'components/Alert'
+import { getArticles } from 'connectors/getArticles'
 
-export default function Articles() {
-  const { articles } = useContext(AppContext)
-  const [articlesFiltered, setArticlesFiltered] = useState([])
-
-  useEffect(() => {
+export default function Articles({ articles }) {
+  // const { articles } = useContext(AppContext)
+  const [articlesFiltered, setArticlesFiltered] = useState(articles)
+  /*  useEffect(() => {
     setArticlesFiltered(articles)
-  }, [articles])
+  }, []) */
 
   const handleClickFilter = (event) => {
     const articlesFiltered = articles.filter(
@@ -70,4 +70,11 @@ export default function Articles() {
       </ContainerSeparator>
     </Layout>
   )
+}
+
+export async function getStaticProps(context) {
+  const articles = await getArticles()
+  return {
+    props: { articles },
+  }
 }
