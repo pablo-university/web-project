@@ -2,7 +2,7 @@ export default function TextInput({
   label = '',
   feedback = '',
   className = '',
-  onChange,
+  onChange = () => {},
   placeholder = 'type here',
   type = 'text',
   value,
