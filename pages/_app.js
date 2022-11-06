@@ -1,38 +1,10 @@
 import Head from 'next/head'
 import '../styles/globals.css'
 import { BASE_PATH } from 'utils/index'
-import AppContext from "context/app";
-import {  donationPoints } from "db/index";
-import { useState, useEffect } from "react";
-import { getArticles } from "connectors/getArticles";
+import AppContextProvider from "context/AppContextProvider";
 
 
 function MyApp({ Component, pageProps }) {
-  // initialization of state context
-  const [contextState, setContextState] = useState({
-       donationPoints,
-       donate: {
-        stepActive: 0
-      },
-  });
-
-  /** 
-   * get articles
-   * set articles on app context
-   * set setContext
-   * */  
-  useEffect(() => {
-    const init = async () => {
-      const articles = await getArticles()
-      setContextState({
-        ...contextState,
-        setContextState,
-        articles,
-      })
-    }
-    init()
-  }, [])
-  
   return (
     <>
       <Head>
@@ -53,9 +25,9 @@ function MyApp({ Component, pageProps }) {
           href={`${BASE_PATH}/favicon_io/favicon.ico`}
         ></link>
       </Head>
-      <AppContext.Provider value={contextState}>
+      <AppContextProvider>
         <Component {...pageProps} />
-      </AppContext.Provider>
+      </AppContextProvider>
     </>
   )
 }
