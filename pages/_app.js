@@ -16,8 +16,12 @@ function MyApp({ Component, pageProps }) {
       },
   });
 
-  // --- Get articles --- 
-  useEffect( () => {
+  /** 
+   * get articles
+   * set articles on app context
+   * set setContext
+   * */  
+  useEffect(() => {
     const init = async () => {
       const articles = await getArticles()
       setContextState({
