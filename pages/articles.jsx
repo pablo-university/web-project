@@ -13,11 +13,7 @@ import Alert from 'components/Alert'
 import { getArticles } from 'connectors/getArticles'
 
 export default function Articles({ articles }) {
-  // const { articles } = useContext(AppContext)
   const [articlesFiltered, setArticlesFiltered] = useState(articles)
-  /*  useEffect(() => {
-    setArticlesFiltered(articles)
-  }, []) */
 
   const handleClickFilter = (event) => {
     const articlesFiltered = articles.filter(
