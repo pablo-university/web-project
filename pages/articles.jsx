@@ -25,7 +25,6 @@ export default function Articles() {
     )
     setArticlesFiltered(articlesFiltered)
   }
-
   return (
     <Layout>
       <ContainerSeparator>
@@ -59,7 +58,7 @@ export default function Articles() {
                   </Link>
                 )
               )}
-            {!articlesFiltered.length && (
+            {articlesFiltered && !articlesFiltered.length && (
               <Container>
                 <Alert>
                   No se encontraron artículos coincidentes con tu búsqueda
