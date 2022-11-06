@@ -1,5 +1,7 @@
+import { getArticlesBeta } from 'connectors/getArticles'
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 export default function handler(req, res) {
-  res.status(200).json({ name: 'John Doe' })
+  getArticlesBeta()
+  res.status(200).json(getArticlesBeta())
 }
