@@ -54,14 +54,14 @@ export default function Articles({ articles }) {
                   </Link>
                 )
               )}
-            {articlesFiltered && !articlesFiltered.length && (
-              <Container>
-                <Alert>
-                  No se encontraron artículos coincidentes con tu búsqueda
-                </Alert>
-              </Container>
-            )}
           </ContainerGrid>
+          {articlesFiltered && !articlesFiltered.length && (
+            <Container>
+              <Alert>
+                No se encontraron artículos coincidentes con tu búsqueda
+              </Alert>
+            </Container>
+          )}
         </Container>
       </ContainerSeparator>
     </Layout>
