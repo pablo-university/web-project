@@ -1,6 +1,6 @@
 export default function ArticleCard({ date, imageSrc = '', title, children }) {
   return (
-    <div className="card bg-base-100 [ transition border hover:shadow-xl ]">
+    <div className="card bg-base-100 [ transition border duration-300 hover:shadow-xl ]">
       <figure>
         <img className="w-full" src={imageSrc} alt="Shoes" />
       </figure>
