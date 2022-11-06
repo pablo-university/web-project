@@ -13,8 +13,8 @@ export default function AppContextProvider({ children }) {
     donationPoints,
     donate: {
       stepActive: 0,
-      setContextState,
     },
+    setContextState,
   })
 
   /**
