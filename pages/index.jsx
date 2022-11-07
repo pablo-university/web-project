@@ -72,7 +72,7 @@ export default function Home() {
                   <PrimaryButton>QUIERO DONAR</PrimaryButton>
                 </Link>
               </div>
-              <div className="grid flex-grow rounded-box place-items-center [ basis-full gap-4 ]">
+              <div className="grid flex-grow rounded-box place-items-center [ basis-full gap-4 md:justify-end ]">
                 {testimonials.map((testimonial, index) => (
                   <TestimonialCard
                     title={testimonial.name}
