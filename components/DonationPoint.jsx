@@ -8,10 +8,20 @@ export default function DonationPoint({
   hour,
   description,
   mapSrc,
+  index,
 }) {
+  const isPair = (number) => {
+    return number % 2 == 0
+  }
   return (
     <ContainerGrid className="grid-cols-1 md:grid-cols-2 border rounded">
-      <div className="p-6 grid gap-2">
+      <div
+        className={`p-6 md:p-11 grid gap-2 ${
+          isPair(index) ? '' : 'col-start-2 row-start-1'
+        }`}
+      >
+        {isPair(index)}
+
         <h3>{title}</h3>
         <ul>
           <li>

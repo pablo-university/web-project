@@ -50,6 +50,7 @@ export default function DonationPoints() {
                   hour={hour}
                   description={description}
                   mapSrc={mapSrc}
+                  index={index}
                 />
               </Container>
             )
