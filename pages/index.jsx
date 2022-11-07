@@ -126,7 +126,7 @@ export default function Home() {
                   </p>
                   <PrimaryOutlineButton>Conocer más</PrimaryOutlineButton>
                 </div>
-                <div className="row-start-1 md:row-start-auto md:mt-20">
+                <div className="row-start-1 md:row-start-auto">
                   <img src={hemocentroImage.src} alt="hemocentro foto" />
                 </div>
               </section>
@@ -135,11 +135,7 @@ export default function Home() {
             <Container>
               <section className="grid md:grid-cols-2 gap-4 md:gap-16">
                 <div>
-                  <img
-                    className="md:mt-20"
-                    src={hemocentroImage.src}
-                    alt="hemocentro foto"
-                  />
+                  <img src={hemocentroImage.src} alt="hemocentro foto" />
                 </div>
                 <div className="grid justify-items-start gap-4">
                   <h2>Hemocentro</h2>
