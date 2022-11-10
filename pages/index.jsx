@@ -15,12 +15,10 @@ import logoHemovida from 'img/home/logo-hemovida.jpg'
 import logoAsse from 'img/home/logo-asse.jpg'
 import logoSns from 'img/home/logo-sns.jpg'
 import ContainerGrid from 'components/layouts/ContainerGrid'
-import AppContext from 'context/app'
-import { useContext } from 'react'
-import ArticleCard from 'components/cards/ArticleCard'
 import RecentArticles from 'components/RecentArticles'
+import { getArticles } from 'connectors/getArticles'
 
-export default function Home() {
+export default function Home({ articles }) {
   const [testimonials] = useState([
     {
       name: 'María',
@@ -41,7 +39,6 @@ export default function Home() {
     setActualIndex(targetTestimonialId)
   }
 
-  const { articles } = useContext(AppContext)
   return (
     <Layout
       main={
@@ -207,4 +204,11 @@ export default function Home() {
       }
     ></Layout>
   )
+}
+
+export async function getStaticProps() {
+  const articles = await getArticles()
+  return {
+    props: { articles },
+  }
 }
