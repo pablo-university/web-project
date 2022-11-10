@@ -8,7 +8,7 @@ export async function getArticlesBeta() {
   const myQuery = `{
     AllArticles{
       id,
-      createdAt,
+      date: createdAt,
       updatedAt,
       title,
       subtitle,
