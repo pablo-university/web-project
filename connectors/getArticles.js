@@ -20,7 +20,7 @@ export async function getArticlesBeta() {
   }`
   const apiRocketKey = process.env.API_ROCKET_KEY
 
-  fetch('https://graphql.apirocket.io', {
+  const response = await fetch('https://graphql.apirocket.io', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -28,12 +28,7 @@ export async function getArticlesBeta() {
     },
     body: JSON.stringify({ query: myQuery }),
   })
-    .then((response) => response.json())
-    .then((json) => {
-      console.log(json.data)
-      return json.data
-    })
-    .catch((err) => {
-      console.error(err)
-    })
+  const data = await response.json();
+  console.log(data);
+  return data;
 }
