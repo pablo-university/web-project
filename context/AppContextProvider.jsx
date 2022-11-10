@@ -16,21 +16,6 @@ export default function AppContextProvider({ children }) {
     },
     setContextState,
   })
-
-  /**
-   * get articles from client
-   * set articles on app context
-   */
-  useEffect(() => {
-    const init = async () => {
-      const articles = await getArticles()
-      setContextState({
-        ...contextState,
-        articles,
-      })
-    }
-    init()
-  }, [])
   return (
     <AppContext.Provider value={contextState}>{children}</AppContext.Provider>
   )
