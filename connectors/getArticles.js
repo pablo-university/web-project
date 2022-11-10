@@ -13,9 +13,9 @@ export async function getArticlesBeta() {
       title,
       subtitle,
       description,
-      date,
       cover{url},
-      coverExtension{url}
+      coverExtension{url},
+      published
     }
   }`
   const apiRocketKey = process.env.API_ROCKET_KEY
