@@ -23,7 +23,7 @@ export default function Article({
 }) {
   return (
     <Layout>
-      {!published ? (
+      {published ? (
         <ContainerSeparator>
           <Container>
             {title && (
