@@ -5,7 +5,7 @@ import { compromisoSocial, conexiones, confort, encuentros, personal, polo, prac
 import programaEducativo from "img/articles/programaEducativo";
 
 export const articles = [
-  {
+  /* {
     id: 0,
     title: 'Programa educativo',
     subtitle: 'Generaciones solidarias',
@@ -22,7 +22,7 @@ export const articles = [
       url: programaEducativo.coverExtension.src
     },
     published: true,
-  },
+  }, */
   {
     id: 1,
     title: 'Compromiso social',
