@@ -7,6 +7,7 @@ import { getArticles } from 'connectors/getArticles'
 import Heading from 'components/layouts/Heading'
 import Alert from 'components/Alert'
 import RecentArticles from 'components/RecentArticles'
+import defaultSvg from 'img/articles/default.svg'
 
 export default function Article({
   article: {
@@ -14,20 +15,19 @@ export default function Article({
     subtitle,
     description,
     date,
-    thumbnail: { src: thumbnailSrc },
-    cover: { src: coverSrc },
-    coverExtension: { src: coverExtensionSrc },
+    cover: { url: coverSrc },
+    coverExtension: { url: coverExtensionSrc },
     published,
   },
   articles,
 }) {
   return (
     <Layout>
-      {published ? (
+      {!published ? (
         <ContainerSeparator>
           <Container>
             {title && (
-              <Heading title={title} imageUrl={thumbnailSrc}>
+              <Heading title={title} imageUrl={defaultSvg.src}>
                 <p className="line-clamp-3">{description}</p>
                 <time dateTime={date}>{date}</time>
               </Heading>
@@ -63,7 +63,7 @@ export async function getStaticPaths() {
   const paths = articles.map((article, index) => {
     return {
       params: {
-        id: `${index}`,
+        id: `${article.id}`,
       },
     }
   })
@@ -76,7 +76,7 @@ export async function getStaticPaths() {
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps({ params: { id } }) {
   const articles = await getArticles()
-  const article = articles[id]
+  const article = articles.find((article) => article.id == id)
   return {
     // Passed to the page component as props
     props: { article, articles },
