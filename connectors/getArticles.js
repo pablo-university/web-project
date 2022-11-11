@@ -1,12 +1,10 @@
-import { articles } from 'db'
-
 export async function getArticles() {
-  return articles
+  return await getArticlesBeta()
 }
 
 export async function getArticlesBeta() {
   const myQuery = `{
-    AllArticles{
+   AllArticles{
       id,
       date: createdAt,
       updatedAt,
@@ -28,7 +26,6 @@ export async function getArticlesBeta() {
     },
     body: JSON.stringify({ query: myQuery }),
   })
-  const data = await response.json();
-  console.log(data);
-  return data;
+  const { data: { AllArticles } } = await response.json();
+  return AllArticles;
 }
