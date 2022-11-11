@@ -1,5 +1,9 @@
+import { articles as articlesFromLocalDb } from "db/index";
+
 export async function getArticles() {
-  return await getArticlesBeta()
+  const articlesBeta = await getArticlesBeta();
+  const articles = [...articlesBeta, ...articlesFromLocalDb]
+  return articles;
 }
 
 export async function getArticlesBeta() {
