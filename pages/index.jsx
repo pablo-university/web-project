@@ -66,7 +66,9 @@ export default function Home({ articles }) {
                   repetitiva.
                 </p>
                 <Link href="/donate">
-                  <PrimaryButton>QUIERO DONAR</PrimaryButton>
+                  <a>
+                    <PrimaryButton>QUIERO DONAR</PrimaryButton>
+                  </a>
                 </Link>
               </div>
               <div className="grid flex-grow rounded-box place-items-center [ basis-full gap-4 md:justify-end ]">
