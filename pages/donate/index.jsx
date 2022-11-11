@@ -15,7 +15,6 @@ export default function ReservationDates() {
      * si es valido asigno nuevo contexto de step
      * redirigir
      */
-    console.log(appContext)
     appContext.setContextState({
       ...appContext,
       donate: {
