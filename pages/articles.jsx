@@ -44,8 +44,8 @@ export default function Articles({ articles }) {
         {process.env.NODE_ENV === 'development' && (
           <Container>
             <Alert className="alert-warning">
-              Estás viendo una vista de artículos en modo desarrollo, en
-              producción sólo se muestran artículos publicados
+              Estás viendo una vista en modo desarrollo, en producción sólo se
+              muestran artículos publicados
             </Alert>
           </Container>
         )}

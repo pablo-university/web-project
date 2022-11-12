@@ -12,8 +12,12 @@ export default function RecentArticles({ articles }) {
             <h2>Artículos recientes</h2>
             <ContainerGrid className="grid-cols-1 md:grid-cols-3 justify-items-center gap-6">
               {articles.map(
-                ({ id, title, description, date, cover: { url } }, index) =>
-                  index < 3 && (
+                (
+                  { id, title, description, date, cover: { url }, published },
+                  index
+                ) =>
+                  index < 3 &&
+                  published && (
                     <Link key={index} href={`/articles/${id}`}>
                       <a className="grid">
                         <ArticleCard title={title} date={date} imageSrc={url}>
