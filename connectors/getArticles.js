@@ -1,4 +1,5 @@
 import { articles as articlesFromLocalDb } from "db/index";
+import { resolveBasePath } from "utils/index";
 
 export async function getArticles() {
   const articlesHasura = await getArticlesHasura();
@@ -66,8 +67,8 @@ export async function getArticlesHasura() {
       subtitle,
       title,
       description,
-      cover: { url: cover },
-      coverExtension: { url: coverExtension }
+      cover: { url: `${resolveBasePath()}${cover}` },
+      coverExtension: { url: `${resolveBasePath()}${coverExtension}` }
     }
   })
   return articlesParsed
