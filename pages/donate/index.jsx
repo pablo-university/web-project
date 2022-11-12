@@ -15,7 +15,6 @@ export default function ReservationDates() {
      * si es valido asigno nuevo contexto de step
      * redirigir
      */
-    console.log(appContext)
     appContext.setContextState({
       ...appContext,
       donate: {
@@ -34,7 +33,7 @@ export default function ReservationDates() {
             <Input label="Motivo" placeholder="Ingresa motivo de donación" />
           </div>
           <div>
-            <Input label="Fecha" type="date" />
+            <Input label="Fecha" type="datetime-local" />
           </div>
         </ContainerGrid>
         {/*  <Link href="/donate/personalDates">

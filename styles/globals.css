@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url('styles/steps.css');
+@import url('styles/NProgress.css');
 
 
 @layer base {

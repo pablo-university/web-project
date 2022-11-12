@@ -15,12 +15,10 @@ import logoHemovida from 'img/home/logo-hemovida.jpg'
 import logoAsse from 'img/home/logo-asse.jpg'
 import logoSns from 'img/home/logo-sns.jpg'
 import ContainerGrid from 'components/layouts/ContainerGrid'
-import AppContext from 'context/app'
-import { useContext } from 'react'
-import ArticleCard from 'components/cards/ArticleCard'
 import RecentArticles from 'components/RecentArticles'
+import { getArticles } from 'connectors/getArticles'
 
-export default function Home() {
+export default function Home({ articles }) {
   const [testimonials] = useState([
     {
       name: 'María',
@@ -41,7 +39,6 @@ export default function Home() {
     setActualIndex(targetTestimonialId)
   }
 
-  const { articles } = useContext(AppContext)
   return (
     <Layout
       main={
@@ -69,10 +66,12 @@ export default function Home() {
                   repetitiva.
                 </p>
                 <Link href="/donate">
-                  <PrimaryButton>QUIERO DONAR</PrimaryButton>
+                  <a>
+                    <PrimaryButton>QUIERO DONAR</PrimaryButton>
+                  </a>
                 </Link>
               </div>
-              <div className="grid flex-grow rounded-box place-items-center [ basis-full gap-4 ]">
+              <div className="grid flex-grow rounded-box place-items-center [ basis-full gap-4 md:justify-end ]">
                 {testimonials.map((testimonial, index) => (
                   <TestimonialCard
                     title={testimonial.name}
@@ -126,8 +125,12 @@ export default function Home() {
                   </p>
                   <PrimaryOutlineButton>Conocer más</PrimaryOutlineButton>
                 </div>
-                <div className="row-start-1 md:row-start-auto md:mt-20">
-                  <img src={hemocentroImage.src} alt="hemocentro foto" />
+                <div className="row-start-1 md:row-start-auto">
+                  <img
+                    className="rounded"
+                    src={hemocentroImage.src}
+                    alt="hemocentro foto"
+                  />
                 </div>
               </section>
             </Container>
@@ -136,8 +139,8 @@ export default function Home() {
               <section className="grid md:grid-cols-2 gap-4 md:gap-16">
                 <div>
                   <img
-                    className="md:mt-20"
                     src={hemocentroImage.src}
+                    className="rounded"
                     alt="hemocentro foto"
                   />
                 </div>
@@ -203,4 +206,11 @@ export default function Home() {
       }
     ></Layout>
   )
+}
+
+export async function getStaticProps() {
+  const articles = await getArticles()
+  return {
+    props: { articles },
+  }
 }

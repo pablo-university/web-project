@@ -29,7 +29,7 @@ export default function Donate({ children }) {
         <Container>
           <ContainerGrid className="md:grid-cols-2 gap-6">
             <div>{children}</div>
-            <div className="grid gap-6">
+            <div className="hidden md:grid gap-6">
               <h3>Tener en cuenta</h3>
               <ul>
                 <li>Seleccione la localidad de donación</li>
