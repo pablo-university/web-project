@@ -1,8 +1,8 @@
 import { articles as articlesFromLocalDb } from "db/index";
 
 export async function getArticles() {
-  const articlesBeta = await getArticlesBeta();
-  const articles = [...articlesBeta, ...articlesFromLocalDb]
+  const articlesHasura = await getArticlesHasura();
+  const articles = [...articlesHasura, ...articlesFromLocalDb]
   return articles;
 }
 
@@ -43,7 +43,7 @@ export async function getArticlesHasura() {
         subtitle
         title
         description
-        cover_extension
+        coverExtension: cover_extension
         cover
       }
     }
@@ -57,6 +57,18 @@ export async function getArticlesHasura() {
     },
     body: JSON.stringify({ query: query }),
   })
-  const data = await response.json();
-  return data
+  const { data: { articles } } = await response.json();
+  // parser function to compatibility with Project
+  const articlesParsed = articles.map(({ id, published, subtitle, title, description, cover, coverExtension }) => {
+    return {
+      id,
+      published,
+      subtitle,
+      title,
+      description,
+      cover: { url: cover },
+      coverExtension: { url: coverExtension }
+    }
+  })
+  return articlesParsed
 }
