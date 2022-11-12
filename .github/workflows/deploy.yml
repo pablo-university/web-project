@@ -6,7 +6,6 @@ on:
       - main
 
 env:
-  mascot: Mona
   HASURA_ADMIN_SECRET: ${{ secrets.HASURA_ADMIN_SECRET }}
 
 jobs:
