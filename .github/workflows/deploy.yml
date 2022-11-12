@@ -7,7 +7,7 @@ on:
 
 env:
   mascot: Mona
-  HASURA_ADMIN_SECRET: 3MsvWqi2z0lZfsndBL3ruce6M2HaQEYp1rov5X60l32XwEEdJojh80BAM6nITcrg
+  HASURA_ADMIN_SECRET: ${{ secrets.HASURA_ADMIN_SECRET }}
 
 jobs:
   deploy:
