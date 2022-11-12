@@ -1,6 +1,6 @@
-import { getArticlesBeta } from 'connectors/getArticles'
+import { getArticlesBeta, getArticlesHasura } from 'connectors/getArticles'
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 export default async function handler(req, res) {
-  res.status(200).json(await getArticlesBeta())
+  res.status(200).json(await getArticlesHasura())
 }
