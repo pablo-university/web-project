@@ -40,19 +40,33 @@ export default function Articles({ articles }) {
             />
           </Heading>
         </Container>
+
+        {process.env.NODE_ENV === 'development' && (
+          <Container>
+            <Alert className="alert-warning">
+              Estás viendo una vista en modo desarrollo, en producción sólo se
+              muestran artículos publicados
+            </Alert>
+          </Container>
+        )}
+
         <Container>
           <ContainerGrid className="grid-cols-1 md:grid-cols-3 xl:grid-cols-4 justify-items-center gap-4">
             {articlesFiltered &&
               articlesFiltered.map(
-                ({ title, description, date, cover: { src } }, index) => (
-                  <Link key={index} href={`/articles/${index}`}>
-                    <a className="grid">
-                      <ArticleCard title={title} date={date} imageSrc={src}>
-                        {description}
-                      </ArticleCard>
-                    </a>
-                  </Link>
-                )
+                (
+                  { id, title, description, date, cover: { url }, published },
+                  index
+                ) =>
+                  (process.env.NODE_ENV === 'development' || published) && (
+                    <Link key={index} href={`/articles/${id}`}>
+                      <a className="grid">
+                        <ArticleCard title={title} date={date} imageSrc={url}>
+                          {description}
+                        </ArticleCard>
+                      </a>
+                    </Link>
+                  )
               )}
           </ContainerGrid>
           {articlesFiltered && !articlesFiltered.length && (
