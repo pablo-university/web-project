@@ -43,6 +43,7 @@ export async function getArticlesHasura() {
       articles {
         id
         published
+        date: created_at
         subtitle
         title
         description
@@ -71,6 +72,7 @@ export async function getArticlesHasura() {
     ({
       id,
       published,
+      date,
       subtitle,
       title,
       description,
@@ -80,6 +82,7 @@ export async function getArticlesHasura() {
       return {
         id,
         published,
+        date,
         subtitle,
         title,
         description,
