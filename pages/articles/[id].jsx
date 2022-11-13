@@ -41,7 +41,6 @@ export default function Article({
                 <h3>{subtitle}</h3>
                 <p>{description}</p>
               </div>
-              <img src={coverExtensionSrc} alt="cover image" />
             </ContainerGrid>
           </Container>
         </ContainerSeparator>

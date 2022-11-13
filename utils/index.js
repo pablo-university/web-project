@@ -9,6 +9,3 @@ export function basePath() {
   if (process.env.GITHUB_ACTIONS) return '/web-project'
   return ''
 }
-
-export const BASE_PATH =
-  process.env.NODE_ENV === 'development' ? '' : '/web-project'
