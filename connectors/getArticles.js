@@ -1,10 +1,10 @@
-import { articles as articlesFromLocalDb } from "db/index";
-import { resolveBasePath } from "utils/index";
+import { articles as articlesFromLocalDb } from 'db/index'
+import { resolveBasePath } from 'utils/index'
 
 export async function getArticles() {
-  const articlesHasura = await getArticlesHasura();
+  const articlesHasura = await getArticlesHasura()
   const articles = [...articlesHasura, ...articlesFromLocalDb]
-  return articles;
+  return articles
 }
 
 export async function getArticlesBeta() {
@@ -31,8 +31,10 @@ export async function getArticlesBeta() {
     },
     body: JSON.stringify({ query: myQuery }),
   })
-  const { data: { AllArticles } } = await response.json();
-  return AllArticles;
+  const {
+    data: { AllArticles },
+  } = await response.json()
+  return AllArticles
 }
 
 export async function getArticlesHasura() {
@@ -48,28 +50,43 @@ export async function getArticlesHasura() {
         cover
       }
     }
-  `;
+  `
   const hasuraSecret = process.env.HASURA_ADMIN_SECRET
-  const response = await fetch('https://clever-mollusk-49.hasura.app/v1/graphql', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-hasura-admin-secret': `${hasuraSecret}`,
-    },
-    body: JSON.stringify({ query: query }),
-  })
-  const { data: { articles } } = await response.json();
+  const response = await fetch(
+    'https://clever-mollusk-49.hasura.app/v1/graphql',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-hasura-admin-secret': `${hasuraSecret}`,
+      },
+      body: JSON.stringify({ query: query }),
+    }
+  )
+  const {
+    data: { articles },
+  } = await response.json()
   // parser function to compatibility with Project
-  const articlesParsed = articles.map(({ id, published, subtitle, title, description, cover, coverExtension }) => {
-    return {
+  const articlesParsed = articles.map(
+    ({
       id,
       published,
       subtitle,
       title,
       description,
-      cover: { url: `${resolveBasePath(cover)}` },
-      coverExtension: { url: `${resolveBasePath(coverExtension)}` }
+      cover,
+      coverExtension,
+    }) => {
+      return {
+        id,
+        published,
+        subtitle,
+        title,
+        description,
+        cover: { url: resolveBasePath(cover) },
+        coverExtension: { url: resolveBasePath(coverExtension) },
+      }
     }
-  })
+  )
   return articlesParsed
 }
