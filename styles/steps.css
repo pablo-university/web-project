@@ -1,15 +1,19 @@
 ul.steps .step {
     grid-template-rows: auto;
+    @apply text-3xl;
+    @apply font-semibold;
 }
 
+/* linea */
 ul.steps .step::before {
-    height: 1em;
+    height: .5em;
 }
 
+/* bubble */
 ul.steps .step::after {
-    width: 2em;
-    height: 2em;
-    font-size: 3em;
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 2em;
     font-weight: 600;
     color: white;
 }
