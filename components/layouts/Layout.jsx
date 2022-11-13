@@ -2,6 +2,7 @@ import NavBar from 'components/NavBar'
 import Container from 'components/layouts/Container'
 import Drawer from 'components/drawer/index'
 import Menu from 'components/NavBar/Menu'
+import Toast from 'components/Toast'
 
 export default function Layout({ children, main }) {
   return (
@@ -147,6 +148,10 @@ export default function Layout({ children, main }) {
             </div>
           </div>
         </footer>
+
+        {process.env.NODE_ENV === 'development' && (
+          <Toast className={'alert-warning'}>Dev mode</Toast>
+        )}
       </div>
     </Drawer>
   )
