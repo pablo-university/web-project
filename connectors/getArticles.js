@@ -67,8 +67,8 @@ export async function getArticlesHasura() {
       subtitle,
       title,
       description,
-      cover: { url: `${resolveBasePath()}${cover}` },
-      coverExtension: { url: `${resolveBasePath()}${coverExtension}` }
+      cover: { url: `${resolveBasePath(cover)}` },
+      coverExtension: { url: `${resolveBasePath(coverExtension)}` }
     }
   })
   return articlesParsed
