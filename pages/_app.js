@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps }) {
         <link
           rel="icon"
           type="image/x-icon"
-          href={resolveBasePath('/favicon_io/favicon.ico')}
+          href='./favicon_io/favicon.ico'
         ></link>
       </Head>
       <AppContextProvider>
