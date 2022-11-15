@@ -11,25 +11,28 @@ env:
   GITHUB_ACTIONS: ${{ github.GITHUB_ACTIONS }}
 
 jobs:
-  deploy:
-    runs-on: ubuntu-22.04
-    permissions:
-      contents: write
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+  # deploy:
+  #   runs-on: ubuntu-22.04
+  #   permissions:
+  #     contents: write
+  #   concurrency:
+  #     group: ${{ github.workflow }}-${{ github.ref }}
+  #   steps:
+  #     - uses: actions/checkout@v3
+
+  #     - name: Setup Node
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: '16'
+
+  #     - run: npm install
+  #     - run: npm run build
+
+  #     - name: Deploy
+  #       uses: peaceiris/actions-gh-pages@v3
+  #       with:
+  #         github_token: ${{ secrets.GITHUB_TOKEN }}
+  #         publish_dir: ./out
+  test:
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
-      - run: npm install
-      - run: npm run build
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+      - run: echo "${{ github.GITHUB_SERVER_URL }} - ${{ github.GITHUB_REPOSITORY }}"
