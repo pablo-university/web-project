@@ -1,9 +1,9 @@
-export function resolveBasePath(path) {
-  // other checks here
+export function resolveBasePath(path = '') {
+  // if have http
   if (path.indexOf('http') !== -1) {
     return path
   }
-  // ---
+  // if based on server
   return `${basePath()}${path}`
 }
 

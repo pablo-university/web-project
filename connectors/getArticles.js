@@ -87,7 +87,7 @@ export async function getArticlesHasura() {
         title,
         description,
         cover: { url: resolveBasePath(cover) },
-        coverExtension: { url: resolveBasePath(coverExtension) },
+        coverExtension: { url: coverExtension },
       }
     }
   )
