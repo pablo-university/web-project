@@ -36,4 +36,4 @@ jobs:
   test:
     runs-on: ubuntu-22.04
     steps:
-      - run: echo "${{ github.GITHUB_SERVER_URL }} - ${{ github.GITHUB_REPOSITORY }}"
+      - run: echo "${{ github.server_url }} - ${{ github.repository }}"
