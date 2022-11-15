@@ -40,7 +40,7 @@ export const articles = [
     coverExtension: { url: compromisoSocial.src },
     published: false
   }, */
-  {
+  /* {
     id: 2,
     title: 'Personal en formación',
     description:
@@ -49,17 +49,17 @@ export const articles = [
     cover: { url: personal.src },
     coverExtension: personal,
     published: false,
-  },
-  {
-    id: 3,
-    title: 'Encuentros internacionales',
-    description:
-      'Con el fin de favorecer la educación continua en medicina trans fusional, desde el Hemocentro organizamos y fomentamos la participación del personal en talleres, cursos y congresos',
-    date: '27 de octubre',
-    cover: { url: encuentros.src },
-    coverExtension: encuentros,
-    published: false,
-  },
+  }, */
+  /*  {
+     id: 3,
+     title: 'Encuentros internacionales',
+     description:
+       'Con el fin de favorecer la educación continua en medicina trans fusional, desde el Hemocentro organizamos y fomentamos la participación del personal en talleres, cursos y congresos',
+     date: '27 de octubre',
+     cover: { url: encuentros.src },
+     coverExtension: encuentros,
+     published: false,
+   }, */
   {
     id: 4,
     title: 'Confort, calidad y tecnología avanzada',

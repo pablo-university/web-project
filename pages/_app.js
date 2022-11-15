@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import Head from 'next/head'
 import Router from 'next/router'
 import '../styles/globals.css'
-import { resolveBasePath } from 'utils/index'
 import AppContextProvider from 'context/AppContextProvider'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
@@ -42,7 +41,7 @@ function MyApp({ Component, pageProps }) {
         <link
           rel="icon"
           type="image/x-icon"
-          href={resolveBasePath('/favicon_io/favicon.ico')}
+          href='./favicon_io/favicon.ico'
         ></link>
       </Head>
       <AppContextProvider>
