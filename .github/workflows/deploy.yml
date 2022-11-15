@@ -34,5 +34,6 @@ jobs:
   #         github_token: ${{ secrets.GITHUB_TOKEN }}
   #         publish_dir: ./out
   test:
+    runs-on: ubuntu-22.04
     steps:
       - run: echo "${{ github.GITHUB_SERVER_URL }} - ${{ github.GITHUB_REPOSITORY }}"
