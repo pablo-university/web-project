@@ -17,9 +17,9 @@ export default function Select({
         onChange={onChange}
         className={`select select-bordered ${className}`}
       >
-        <option disabled selected>
+        {/*    <option disabled selected>
           {children}
-        </option>
+        </option> */}
         {options.map((option, index) => (
           <option key={index}>{option}</option>
         ))}

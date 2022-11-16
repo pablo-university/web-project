@@ -75,6 +75,8 @@ export default function ReservationDates() {
                 'Flores',
                 'Florida',
               ]}
+              value="Artigas"
+              onChange={() => {}}
             >
               Selecionar una ciudad
             </Select>
