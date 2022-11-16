@@ -33,7 +33,7 @@ export default function Article({
             )}
           </Container>
 
-          <div className="md:container 2xl:m-auto">
+          <div className="md:container min-[1930px]:m-auto">
             <img
               className="object-cover aspect-video md:w-3/4"
               src={coverSrc}
