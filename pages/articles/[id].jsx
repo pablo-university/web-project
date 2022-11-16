@@ -16,7 +16,6 @@ export default function Article({
     description,
     date,
     cover: { url: coverSrc },
-    coverExtension: { url: coverExtensionSrc },
     published,
   },
   articles,

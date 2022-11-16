@@ -47,7 +47,6 @@ export async function getArticlesHasura() {
         subtitle
         title
         description
-        coverExtension: cover_extension
         cover
       }
     }
@@ -77,7 +76,6 @@ export async function getArticlesHasura() {
       title,
       description,
       cover,
-      coverExtension,
     }) => {
       return {
         id,
@@ -87,7 +85,6 @@ export async function getArticlesHasura() {
         title,
         description,
         cover: { url: resolveBasePath(cover) },
-        coverExtension: { url: coverExtension },
       }
     }
   )
