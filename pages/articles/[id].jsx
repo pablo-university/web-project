@@ -16,7 +16,6 @@ export default function Article({
     description,
     date,
     cover: { url: coverSrc },
-    coverExtension: { url: coverExtensionSrc },
     published,
   },
   articles,
@@ -33,7 +32,14 @@ export default function Article({
               </Heading>
             )}
           </Container>
-          <img className="md:pr-20" src={coverSrc} alt="cover image" />
+
+          <div className="md:container min-[1930px]:m-auto">
+            <img
+              className="object-cover aspect-video md:w-3/4"
+              src={coverSrc}
+              alt="cover image"
+            />
+          </div>
 
           <Container>
             <ContainerGrid className="md:grid-cols-2 gap-6">
