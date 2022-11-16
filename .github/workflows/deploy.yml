@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - develop
+      # - develop
 
 env:
   HASURA_ADMIN_SECRET: ${{ secrets.HASURA_ADMIN_SECRET }}
