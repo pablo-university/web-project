@@ -29,7 +29,7 @@ export async function getArticlesHasura() {
   `
   const hasuraSecret = process.env.HASURA_ADMIN_SECRET
   const response = await fetch(
-    'https://clevXer-mollusk-49.hasura.app/v1/graphql',
+    'https://clever-mollusk-49.hasura.app/v1/graphql',
     {
       method: 'POST',
       headers: {
