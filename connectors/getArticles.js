@@ -4,12 +4,12 @@ import { resolveBasePath } from 'utils/index'
 export async function getArticles() {
   try {
     const articlesHasura = await getArticlesHasura()
-    const articles = [...articlesHasura, ...articlesFromLocalDb]
+    const articles = [...articlesHasura]
     return articles
   } catch (error) {
-    console.log(error);
-    const articles = [...articlesFromLocalDb];
-    return articles;
+    console.log(error)
+    const articles = [...articlesFromLocalDb]
+    return articles
   }
 }
 
@@ -29,7 +29,7 @@ export async function getArticlesHasura() {
   `
   const hasuraSecret = process.env.HASURA_ADMIN_SECRET
   const response = await fetch(
-    'https://clever-mollusk-49.hasura.app/v1/graphql',
+    'https://clevXer-mollusk-49.hasura.app/v1/graphql',
     {
       method: 'POST',
       headers: {
@@ -44,15 +44,7 @@ export async function getArticlesHasura() {
   } = await response.json()
   // parser function to compatibility with Project
   const articlesParsed = articles.map(
-    ({
-      id,
-      published,
-      date,
-      subtitle,
-      title,
-      description,
-      cover,
-    }) => {
+    ({ id, published, date, subtitle, title, description, cover }) => {
       return {
         id,
         published,
