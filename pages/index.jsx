@@ -58,12 +58,11 @@ export default function Home({ articles }) {
                 <p>
                   El Hemocentro es un servicio de Medicina Transfusional y Banco
                   de Leche Materna, de referencia regional, centralizando la
-                  donación de sangre y leche materna y la producción de
-                  hemocomponentes, cumpliendo con los estándares nacionales e
-                  internacionales de calidad y seguridad, racionalizando y
-                  optimizando los recursos humanos, económicos y técnicos,
-                  educando y promoviendo la donación voluntaria, altruista y
-                  repetitiva.
+                  donación de sangre. Producción de hemocomponentes, cumpliendo
+                  con los estándares nacionales e internacionales de calidad y
+                  seguridad, racionalizando y optimizando los recursos humanos,
+                  económicos, técnicos, educando y promoviendo la donación
+                  voluntaria. Altruista y repetitiva.
                 </p>
                 <Link href="/donate">
                   <a>
