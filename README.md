@@ -13,11 +13,13 @@
 - node v16.15.1 (npm v8.11.0)
 - Have the .env file
 
-**Get up**
 
-With Docker: `docker compose up`
+**Docker:** `docker compose up`
 
-With Node:
+**Node:**
 
 - `npm run i`
 - `npm run dev`
+
+## General architecture
+![Alt text](./architecture.png "Optional title")
