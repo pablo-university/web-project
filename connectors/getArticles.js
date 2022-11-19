@@ -2,9 +2,14 @@ import { articles as articlesFromLocalDb } from 'db/index'
 import { resolveBasePath } from 'utils/index'
 
 export async function getArticles() {
-  const articlesHasura = await getArticlesHasura()
-  const articles = [...articlesHasura, ...articlesFromLocalDb]
-  return articles
+  try {
+    const articlesHasura = await getArticlesHasura()
+    const articles = [...articlesHasura, ...articlesFromLocalDb]
+    return articles
+  } catch (error) {
+    const articles = [...articlesFromLocalDb];
+    return articles;
+  }
 }
 
 export async function getArticlesHasura() {
