@@ -4,13 +4,32 @@ import { resolveBasePath } from 'utils/index'
 export async function getArticles() {
   try {
     const articlesHasura = await getArticlesHasura()
-    const articles = [...articlesHasura]
+    const articlesParsed = await parseArticles(articlesHasura)
+    const articles = [...articlesParsed]
     return articles
   } catch (error) {
     console.log(error)
     const articles = [...articlesFromLocalDb]
     return articles
   }
+}
+
+export async function parseArticles(articles) {
+  // parser function to compatibility with Project
+  const articlesParsed = articles.map(
+    ({ id, published, date, subtitle, title, description, cover }) => {
+      return {
+        id,
+        published,
+        date,
+        subtitle,
+        title,
+        description,
+        cover: { url: resolveBasePath(cover) },
+      }
+    }
+  )
+  return articlesParsed
 }
 
 export async function getArticlesHasura() {
@@ -42,19 +61,6 @@ export async function getArticlesHasura() {
   const {
     data: { articles },
   } = await response.json()
-  // parser function to compatibility with Project
-  const articlesParsed = articles.map(
-    ({ id, published, date, subtitle, title, description, cover }) => {
-      return {
-        id,
-        published,
-        date,
-        subtitle,
-        title,
-        description,
-        cover: { url: resolveBasePath(cover) },
-      }
-    }
-  )
-  return articlesParsed
+
+  return articles
 }
