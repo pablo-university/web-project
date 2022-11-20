@@ -2,39 +2,15 @@ import { articles as articlesFromLocalDb } from 'db/index'
 import { resolveBasePath } from 'utils/index'
 
 export async function getArticles() {
-  const articlesHasura = await getArticlesHasura()
-  const articles = [...articlesHasura, ...articlesFromLocalDb]
-  return articles
-}
-
-export async function getArticlesBeta() {
-  const myQuery = `{
-   AllArticles{
-      id,
-      date: createdAt,
-      updatedAt,
-      title,
-      subtitle,
-      description,
-      cover{url},
-      coverExtension{url},
-      published
-    }
-  }`
-  const apiRocketKey = process.env.API_ROCKET_KEY
-
-  const response = await fetch('https://graphql.apirocket.io', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiRocketKey}`,
-    },
-    body: JSON.stringify({ query: myQuery }),
-  })
-  const {
-    data: { AllArticles },
-  } = await response.json()
-  return AllArticles
+  try {
+    const articlesHasura = await getArticlesHasura()
+    const articles = [...articlesHasura]
+    return articles
+  } catch (error) {
+    console.log(error)
+    const articles = [...articlesFromLocalDb]
+    return articles
+  }
 }
 
 export async function getArticlesHasura() {
@@ -68,15 +44,7 @@ export async function getArticlesHasura() {
   } = await response.json()
   // parser function to compatibility with Project
   const articlesParsed = articles.map(
-    ({
-      id,
-      published,
-      date,
-      subtitle,
-      title,
-      description,
-      cover,
-    }) => {
+    ({ id, published, date, subtitle, title, description, cover }) => {
       return {
         id,
         published,
