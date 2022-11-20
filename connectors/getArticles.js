@@ -1,4 +1,5 @@
-import { articles as articlesFromLocalDb } from 'db/index'
+// import { articles as articlesFromLocalDb } from 'db/index'
+import localArticles from 'db/articles.json'
 import { resolveBasePath } from 'utils/index'
 
 export async function getArticles() {
@@ -9,7 +10,8 @@ export async function getArticles() {
     return articles
   } catch (error) {
     console.log(error)
-    const articles = [...articlesFromLocalDb]
+    const articlesParsed = await parseArticles(localArticles)
+    const articles = [...articlesParsed]
     return articles
   }
 }
