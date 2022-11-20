@@ -1,40 +1,37 @@
-import { articles as articlesFromLocalDb } from 'db/index'
+// import { articles as articlesFromLocalDb } from 'db/index'
+import localArticles from 'db/articles.json'
 import { resolveBasePath } from 'utils/index'
 
 export async function getArticles() {
-  const articlesHasura = await getArticlesHasura()
-  const articles = [...articlesHasura, ...articlesFromLocalDb]
-  return articles
+  try {
+    const articlesHasura = await getArticlesHasura()
+    const articlesParsed = await parseArticles(articlesHasura)
+    const articles = [...articlesParsed]
+    return articles
+  } catch (error) {
+    console.log(error)
+    const articlesParsed = await parseArticles(localArticles)
+    const articles = [...articlesParsed]
+    return articles
+  }
 }
 
-export async function getArticlesBeta() {
-  const myQuery = `{
-   AllArticles{
-      id,
-      date: createdAt,
-      updatedAt,
-      title,
-      subtitle,
-      description,
-      cover{url},
-      coverExtension{url},
-      published
+export async function parseArticles(articles) {
+  // parser function to compatibility with Project
+  const articlesParsed = articles.map(
+    ({ id, published, date, subtitle, title, description, cover }) => {
+      return {
+        id,
+        published,
+        date,
+        subtitle,
+        title,
+        description,
+        cover: { url: resolveBasePath(cover) },
+      }
     }
-  }`
-  const apiRocketKey = process.env.API_ROCKET_KEY
-
-  const response = await fetch('https://graphql.apirocket.io', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiRocketKey}`,
-    },
-    body: JSON.stringify({ query: myQuery }),
-  })
-  const {
-    data: { AllArticles },
-  } = await response.json()
-  return AllArticles
+  )
+  return articlesParsed
 }
 
 export async function getArticlesHasura() {
@@ -66,27 +63,6 @@ export async function getArticlesHasura() {
   const {
     data: { articles },
   } = await response.json()
-  // parser function to compatibility with Project
-  const articlesParsed = articles.map(
-    ({
-      id,
-      published,
-      date,
-      subtitle,
-      title,
-      description,
-      cover,
-    }) => {
-      return {
-        id,
-        published,
-        date,
-        subtitle,
-        title,
-        description,
-        cover: { url: resolveBasePath(cover) },
-      }
-    }
-  )
-  return articlesParsed
+
+  return articles
 }
