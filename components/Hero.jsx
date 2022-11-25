@@ -1,12 +1,40 @@
-export default function Hero({ children, backgroundImageUrl }) {
+import { useState, useEffect } from 'react'
+
+export default function Hero({
+  children,
+  backgroundImageUrl,
+  isRunningAnimation,
+}) {
+  const animationClass = 'animate-pulse'
+  const [animation, setAnimation] = useState(animationClass)
+
+  const runAnimation = () => {
+    setAnimation(animationClass)
+  }
+
+  const stopAnimation = () => {
+    setAnimation('')
+  }
+
+  useEffect(() => {
+    if (isRunningAnimation) {
+      console.log('start')
+      runAnimation()
+      return
+    }
+    console.log('stop')
+    stopAnimation()
+  }, [isRunningAnimation])
   return (
     <div
-      className="hero min-h-screen lg:min-h-[90vh]"
+      className="hero min-h-screen lg:min-h-[90vh] "
       style={{
         backgroundImage: `url(${backgroundImageUrl})`,
       }}
     >
-      <div className="hero-overlay bg-opacity-60 [ backdrop-blur-md ]"></div>
+      <div
+        className={`hero-overlay bg-opacity-60 [ backdrop-blur-md ${animation} ]`}
+      ></div>
       <div className="hero-content text-center text-neutral-content [ max-w-max ]">
         {children}
       </div>
