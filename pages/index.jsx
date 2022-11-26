@@ -34,20 +34,9 @@ export default function Home({ articles }) {
     },
   ])
   const [actualIndex, setActualIndex] = useState(0)
-  const [isRunningAnimation, setIsRunningAnimation] = useState(true)
 
   const handleChangeHeroImage = (targetTestimonialId) => {
-    //  tocheck
-    setIsRunningAnimation(true)
-
     setActualIndex(targetTestimonialId)
-
-    // tocheck
-    setTimeout(() => {
-      setIsRunningAnimation(false)
-    }, 2000)
-
-    console.log('handleChangeHeroImage', isRunningAnimation)
   }
   return (
     <Layout
@@ -58,7 +47,6 @@ export default function Home({ articles }) {
               testimonials[actualIndex].image.src ||
               'https://placeimg.com/1000/800/arch'
             }
-            isRunningAnimation={isRunningAnimation}
           >
             <div className="flex flex-col w-full md:flex-row [ container gap-8 mt-24 ]">
               <div className="grid flex-grow rounded-box place-items-start [ basis-full text-start gap-4 ]">

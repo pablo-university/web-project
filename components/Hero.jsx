@@ -1,10 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export default function Hero({
-  children,
-  backgroundImageUrl,
-  isRunningAnimation,
-}) {
+export default function Hero({ children, backgroundImageUrl }) {
   const animationClass = 'animate-pulse'
   const [animation, setAnimation] = useState(animationClass)
 
@@ -17,14 +13,13 @@ export default function Hero({
   }
 
   useEffect(() => {
-    if (isRunningAnimation) {
-      console.log('start')
-      runAnimation()
-      return
-    }
-    console.log('stop')
     stopAnimation()
-  }, [isRunningAnimation])
+    console.log('Hero/effect')
+    setTimeout(() => {
+      runAnimation()
+    }, 300)
+  }, [backgroundImageUrl])
+
   return (
     <div
       className="hero min-h-screen lg:min-h-[90vh] "
