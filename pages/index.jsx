@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Layout from 'components/layouts/Layout'
 import Container from 'components/layouts/Container'
 import ContainerSeparator from 'components/layouts/ContainerSeparator'
