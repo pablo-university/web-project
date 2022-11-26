@@ -14,7 +14,6 @@ export default function Hero({ children, backgroundImageUrl }) {
 
   useEffect(() => {
     stopAnimation()
-    console.log('Hero/effect')
     setTimeout(() => {
       runAnimation()
     }, 300)
