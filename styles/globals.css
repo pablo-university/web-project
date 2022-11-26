@@ -49,3 +49,7 @@
         @apply font-bold;
     }
 }
+
+.animate-pulse {
+    animation-iteration-count: 1;
+}
