@@ -56,7 +56,7 @@ export default function HoursAndConditios() {
             <div>
               <img src={bottomImageSvg.src} alt="not image provided" />
             </div>
-            <div className="grid gap-4">
+            <div className="grid gap-4 content-center">
               <h3>
                 En caso de estar en una de estas situaciones, es mejor que no
                 dones en este momento
