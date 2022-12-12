@@ -6,6 +6,8 @@ export default function TextInput({
   placeholder = 'type here',
   type = 'text',
   value,
+  register = () => {},
+  registerOptions = {},
 }) {
   return (
     <div className="form-control w-full max-w-xs">
@@ -18,6 +20,7 @@ export default function TextInput({
         className={`input input-bordered w-full max-w-xs ${className}`}
         value={value}
         onChange={(event) => onChange(event)}
+        {...register(label, registerOptions)}
       />
       <label className="label justify-end">
         <span className="label-text-alt">{feedback}</span>
