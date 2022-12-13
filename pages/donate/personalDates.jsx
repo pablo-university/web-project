@@ -114,14 +114,14 @@ export default function ReservationDates() {
           </div>
         </ContainerGrid>
       </div>
-      <div className="grid grid-cols-2">
-        <Link href="/donate/">
+      <div>
+        {/*  <Link href="/donate/">
           <a>
             <PrimaryOutlineButton onClick={handleClickBack}>
               Atrás
             </PrimaryOutlineButton>
           </a>
-        </Link>
+        </Link> */}
         <PrimaryButton onClick={handleSubmit(handleClickNext)}>
           Siguiente
         </PrimaryButton>
