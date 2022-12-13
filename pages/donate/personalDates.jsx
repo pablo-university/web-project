@@ -70,10 +70,9 @@ export default function ReservationDates() {
               register={register}
               registerOptions={{
                 required: true,
+                pattern: /\d{7,10}/,
               }}
-              feedback={
-                errors.Teléfono ? 'Necesitamos un teléfono de contacto' : ''
-              }
+              feedback={errors.Teléfono ? 'Necesitamos un teléfono válido' : ''}
             />
           </div>
           <div>
@@ -84,10 +83,9 @@ export default function ReservationDates() {
               register={register}
               registerOptions={{
                 required: true,
+                pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
               }}
-              feedback={
-                errors.Correo ? 'Necesitamos un teléfono de contacto' : ''
-              }
+              feedback={errors.Correo ? 'Este email parece inválido' : ''}
             />
             <Input
               label="Dirección"
@@ -97,9 +95,7 @@ export default function ReservationDates() {
               registerOptions={{
                 required: true,
               }}
-              feedback={
-                errors.Dirección ? 'Necesitamos un teléfono de contacto' : ''
-              }
+              feedback={errors.Dirección ? 'Necesitamos una Dirección' : ''}
             />
             <Select
               label="Ciudad"
