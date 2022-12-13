@@ -53,28 +53,6 @@ export default function ReservationDates() {
               }}
               feedback={errors.Nombre ? 'Debes colocar un nombre' : ''}
             />
-            {/**  
-          TODO
-          si hay tiempo resolver la parte de los input type radio
-          */}
-            {/* <div>
-            <ContainerGrid className="grid-cols-2">
-              <input
-                type="radio"
-                name="sexo"
-                className="radio radio-primary"
-                checked
-              />
-              <label className="label">
-                <span className="label-text">
-                  Pick the best fantasy franchise
-                </span>
-              </label>
-            </ContainerGrid>
-           
-          </div> 
-          <input type="radio" name="sexo" className="radio radio-primary" />
-           */}
             <Input
               label="Cédula"
               type="number"
