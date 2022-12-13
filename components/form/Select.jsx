@@ -6,6 +6,8 @@ export default function Select({
   children = 'Pick one',
   value,
   options = [],
+  register = () => {},
+  registerOptions = {},
 }) {
   return (
     <div className="form-control w-full max-w-xs">
@@ -16,6 +18,7 @@ export default function Select({
         value={value}
         onChange={onChange}
         className={`select select-bordered ${className}`}
+        {...register(label, registerOptions)}
       >
         {/*    <option disabled selected>
           {children}
