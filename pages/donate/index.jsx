@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import ContainerGrid from 'components/layouts/ContainerGrid'
 import PrimaryButton from 'components/buttons/PrimaryButton'
@@ -19,11 +18,9 @@ export default function ReservationDates() {
 
   const handleClickNextStep = (data) => {
     /**
-     * si es valido asigno nuevo contexto de step
-     * redirigir
+     * TODO:
+     * se deberían poder cargar datos viejos si el usuario desea volver a esta parte del formulario
      */
-
-    // console.log('handleClickNextStep', data)
     appContext.setContextState({
       ...appContext,
       donate: {

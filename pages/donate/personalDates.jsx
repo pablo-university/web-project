@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import ContainerGrid from 'components/layouts/ContainerGrid'
-import PrimaryOutlineButton from 'components/buttons/PrimaryOutlineButton'
 import PrimaryButton from 'components/buttons/PrimaryButton'
 import Input from 'components/form/Input'
 import Wrapper from 'components/pages/donate/Wrapper'
@@ -30,8 +29,6 @@ export default function ReservationDates() {
   }
 
   const handleClickNext = (formData) => {
-    console.log('handleClickNext', formData)
-
     /**
      * si es valido asigno nuevo contexto de step
      * redirigir
