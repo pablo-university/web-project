@@ -7,8 +7,15 @@ import Input from 'components/form/Input'
 import Wrapper from 'components/pages/donate/Wrapper'
 import Select from 'components/form/Select'
 import { useContext, AppContext } from 'context/app'
+import { useForm } from 'react-hook-form'
 
 export default function ReservationDates() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm()
   const router = useRouter()
   const appContext = useContext(AppContext)
 
@@ -22,7 +29,9 @@ export default function ReservationDates() {
     router.push('/donate/')
   }
 
-  const handleClickNext = () => {
+  const handleClickNext = (formData) => {
+    console.log('handleClickNext', formData)
+
     /**
      * si es valido asigno nuevo contexto de step
      * redirigir
@@ -35,7 +44,15 @@ export default function ReservationDates() {
         <h3>Datos Personales</h3>
         <ContainerGrid className="lg:grid-cols-2 lg:gap-6">
           <div>
-            <Input label="Nombre" placeholder="Juanito" />
+            <Input
+              label="Nombre"
+              placeholder="Juanito"
+              register={register}
+              registerOptions={{
+                required: true,
+              }}
+              feedback={errors.Nombre ? 'Debes colocar un nombre' : ''}
+            />
             {/**  
           TODO
           si hay tiempo resolver la parte de los input type radio
@@ -58,12 +75,54 @@ export default function ReservationDates() {
           </div> 
           <input type="radio" name="sexo" className="radio radio-primary" />
            */}
-            <Input label="Cédula" type="number" placeholder="456464984" />
-            <Input label="Teléfono" type="number" placeholder="0988259998++" />
+            <Input
+              label="Cédula"
+              type="number"
+              placeholder="456464984"
+              register={register}
+              registerOptions={{
+                required: true,
+              }}
+              feedback={errors.Cédula ? 'Debes colocar tu CI' : ''}
+            />
+            <Input
+              label="Teléfono"
+              type="number"
+              placeholder="0988259998++"
+              register={register}
+              registerOptions={{
+                required: true,
+              }}
+              feedback={
+                errors.Teléfono ? 'Necesitamos un teléfono de contacto' : ''
+              }
+            />
           </div>
           <div>
-            <Input label="Correo" type="mail" placeholder="pablo@correo.com" />
-            <Input label="Dirección" type="text" placeholder="Rabmbla 2716" />
+            <Input
+              label="Correo"
+              type="mail"
+              placeholder="pablo@correo.com"
+              register={register}
+              registerOptions={{
+                required: true,
+              }}
+              feedback={
+                errors.Correo ? 'Necesitamos un teléfono de contacto' : ''
+              }
+            />
+            <Input
+              label="Dirección"
+              type="text"
+              placeholder="Rabmbla 2716"
+              register={register}
+              registerOptions={{
+                required: true,
+              }}
+              feedback={
+                errors.Dirección ? 'Necesitamos un teléfono de contacto' : ''
+              }
+            />
             <Select
               label="Ciudad"
               options={[
@@ -75,8 +134,6 @@ export default function ReservationDates() {
                 'Flores',
                 'Florida',
               ]}
-              value="Artigas"
-              onChange={() => {}}
             >
               Selecionar una ciudad
             </Select>
@@ -91,7 +148,9 @@ export default function ReservationDates() {
             </PrimaryOutlineButton>
           </a>
         </Link>
-        <PrimaryButton onClick={handleClickNext}>Siguiente</PrimaryButton>
+        <PrimaryButton onClick={handleSubmit(handleClickNext)}>
+          Siguiente
+        </PrimaryButton>
       </div>
     </Wrapper>
   )
