@@ -45,7 +45,11 @@ export default function Layout({ children, main }) {
           </div>
           <div className="md:place-self-center md:justify-self-end">
             <div className="grid grid-flow-col gap-4">
-              <a>
+              <a
+                href="https://www.facebook.com/hemocentro.maldonado/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <svg
                   width="45"
                   height="44"
@@ -61,7 +65,11 @@ export default function Layout({ children, main }) {
                   />
                 </svg>
               </a>
-              <a>
+              <a
+                href="https://www.instagram.com/hemocentro.regional/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <svg
                   width="43"
                   height="44"
@@ -83,7 +91,11 @@ export default function Layout({ children, main }) {
                   />
                 </svg>
               </a>
-              <a>
+              <a
+                href="https://twitter.com/HemocentroMaldo"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <svg
                   width="43"
                   height="44"
@@ -109,7 +121,11 @@ export default function Layout({ children, main }) {
                   </defs>
                 </svg>
               </a>
-              <a>
+              <a
+                href="https://api.whatsapp.com/message/J5PB6LQFXGIUO1?autoload=1&app_absent=0"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <svg
                   width="44"
                   height="44"
@@ -127,7 +143,11 @@ export default function Layout({ children, main }) {
                   />
                 </svg>
               </a>
-              <a>
+              <a
+                href="https://www.youtube.com/c/HemocentroMaldonado/videos"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <svg
                   width="44"
                   height="44"
