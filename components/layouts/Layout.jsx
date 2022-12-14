@@ -38,7 +38,9 @@ export default function Layout({ children, main }) {
         </footer>
         <footer className="footer px-10 py-4 border-t border-base-300 [ bg-neutral text-white items-center ]">
           <div>
-            <p>Todos los derechos reservados 2023 Uruguay</p>
+            <p>
+              Todos los derechos reservados {new Date().getFullYear()} Uruguay
+            </p>
           </div>
           <div>
             <p>Privacidad | Términos y Condiciones</p>
