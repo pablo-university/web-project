@@ -5,6 +5,7 @@ import '../styles/globals.css'
 import AppContextProvider from 'context/AppContextProvider'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
+import favicon from "img/favicon_io/favicon-32x32.png";
 
 function MyApp({ Component, pageProps }) {
   /* ... */
@@ -41,7 +42,7 @@ function MyApp({ Component, pageProps }) {
         <link
           rel="icon"
           type="image/x-icon"
-          href='./favicon_io/favicon.ico'
+          href={favicon.src}
         ></link>
       </Head>
       <AppContextProvider>
